@@ -1,11 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Suspense, lazy } from 'react';
 import { Layout } from './components/Layout';
 
 const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
 const ProductAlDeci = lazy(() => import('./pages/ProductAlDeci').then(module => ({ default: module.ProductAlDeci })));
-const Platform = lazy(() => import('./pages/Platform').then(module => ({ default: module.Platform })));
 const DesignPartners = lazy(() => import('./pages/DesignPartners').then(module => ({ default: module.DesignPartners })));
 const CaseStudies = lazy(() => import('./pages/CaseStudies').then(module => ({ default: module.CaseStudies })));
 const Resources = lazy(() => import('./pages/Resources').then(module => ({ default: module.Resources })));
@@ -38,7 +37,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/product/aldeci" element={<ProductAlDeci />} />
-              <Route path="/platform" element={<Platform />} />
+              <Route path="/platform" element={<Navigate to="/product/aldeci#architecture" replace />} />
               <Route path="/partners/design" element={<DesignPartners />} />
               <Route path="/customers" element={<CaseStudies />} />
               <Route path="/resources" element={<Resources />} />

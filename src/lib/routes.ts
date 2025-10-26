@@ -22,13 +22,6 @@ export const routes: RouteConfig[] = [
     component: 'ProductAlDeci'
   },
   {
-    path: '/platform',
-    title: 'Platform Architecture | DevOps.ai',
-    description: 'Shared platform architecture powering AlDeci and future DevOps.ai products with push-based ingestion and evidence automation.',
-    ogImage: '/images/og-platform.png',
-    component: 'Platform'
-  },
-  {
     path: '/partners/design',
     title: 'Design Partner Program | DevOps.ai',
     description: 'Join our design partner program to shape the future of DevSecOps automation and evidence-as-code.',
@@ -106,7 +99,6 @@ export const routes: RouteConfig[] = [
 
 export const navItems = [
   { label: 'Product', path: '/product/aldeci' },
-  { label: 'Platform', path: '/platform' },
   { label: 'Customers', path: '/customers' },
   { label: 'Resources', path: '/resources' },
   { label: 'About', path: '/about' },

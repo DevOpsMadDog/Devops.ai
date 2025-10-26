@@ -108,11 +108,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/platform" className="text-sm text-slate-400 hover:text-teal-400 transition-colors">
-                    Platform
-                  </Link>
-                </li>
-                <li>
                   <Link to="/products/ai-data-quality" className="text-sm text-slate-400 hover:text-teal-400 transition-colors">
                     Coming Soon
                   </Link>
