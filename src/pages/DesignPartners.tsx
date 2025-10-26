@@ -1,45 +1,7 @@
 import { SEO } from '../components/SEO';
-import { useState } from 'react';
 import { CheckCircle, Users, TrendingUp, Award } from 'lucide-react';
 
 export function DesignPartners() {
-  const [formData, setFormData] = useState({
-    company: '',
-    industry: '',
-    size: '',
-    clouds: '',
-    scanners: '',
-    frameworks: '',
-    objectives: '',
-    timeline: '',
-    contact: '',
-    email: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Design Partner Application:', formData);
-    alert('Thank you for your interest! We will review your application and contact you within 2 business days.');
-    setFormData({
-      company: '',
-      industry: '',
-      size: '',
-      clouds: '',
-      scanners: '',
-      frameworks: '',
-      objectives: '',
-      timeline: '',
-      contact: '',
-      email: ''
-    });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
 
   return (
     <>
@@ -228,7 +190,18 @@ export function DesignPartners() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-slate-50 mb-12 text-center">Apply to Join</h2>
 
-          <form onSubmit={handleSubmit} className="bg-slate-950 border border-slate-800 rounded-xl p-8 space-y-6">
+          <form 
+            action="https://formsubmit.co/contact@devops.ai" 
+            method="POST"
+            className="bg-slate-950 border border-slate-800 rounded-xl p-8 space-y-6"
+          >
+            {/* Hidden fields for Formsubmit.co configuration */}
+            <input type="hidden" name="_subject" value="DevOps.ai Design Partner Application" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://devops-ai-website-mc67od8m.devinapps.com/thank-you" />
+            <input type="hidden" name="form_type" value="design_partner" />
+            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="company" className="block text-sm font-medium text-slate-300 mb-2">
@@ -239,8 +212,6 @@ export function DesignPartners() {
                   id="company"
                   name="company"
                   required
-                  value={formData.company}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-slate-50 focus:outline-none focus:border-teal-500 transition-colors"
                 />
               </div>
@@ -253,8 +224,6 @@ export function DesignPartners() {
                   id="industry"
                   name="industry"
                   required
-                  value={formData.industry}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-slate-50 focus:outline-none focus:border-teal-500 transition-colors"
                 >
                   <option value="">Select industry</option>
@@ -278,8 +247,6 @@ export function DesignPartners() {
                   id="size"
                   name="size"
                   required
-                  value={formData.size}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-slate-50 focus:outline-none focus:border-teal-500 transition-colors"
                 >
                   <option value="">Select size</option>
@@ -301,8 +268,6 @@ export function DesignPartners() {
                   name="clouds"
                   required
                   placeholder="e.g., AWS, Azure, GCP"
-                  value={formData.clouds}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-slate-50 focus:outline-none focus:border-teal-500 transition-colors"
                 />
               </div>
@@ -318,8 +283,6 @@ export function DesignPartners() {
                 name="scanners"
                 required
                 placeholder="e.g., Snyk, Wiz, Tenable, SonarQube"
-                value={formData.scanners}
-                onChange={handleChange}
                 className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-slate-50 focus:outline-none focus:border-teal-500 transition-colors"
               />
             </div>
@@ -334,8 +297,6 @@ export function DesignPartners() {
                 name="frameworks"
                 required
                 placeholder="e.g., SOC 2, ISO 27001, APRA CPS 234, Essential Eight"
-                value={formData.frameworks}
-                onChange={handleChange}
                 className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-slate-50 focus:outline-none focus:border-teal-500 transition-colors"
               />
             </div>
@@ -350,8 +311,6 @@ export function DesignPartners() {
                 required
                 rows={4}
                 placeholder="What are your main goals? (e.g., reduce false positives, automate audit prep, improve MTTR)"
-                value={formData.objectives}
-                onChange={handleChange}
                 className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-slate-50 focus:outline-none focus:border-teal-500 transition-colors"
               />
             </div>
@@ -364,8 +323,6 @@ export function DesignPartners() {
                 id="timeline"
                 name="timeline"
                 required
-                value={formData.timeline}
-                onChange={handleChange}
                 className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-slate-50 focus:outline-none focus:border-teal-500 transition-colors"
               >
                 <option value="">Select timeline</option>
@@ -386,8 +343,6 @@ export function DesignPartners() {
                   id="contact"
                   name="contact"
                   required
-                  value={formData.contact}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-slate-50 focus:outline-none focus:border-teal-500 transition-colors"
                 />
               </div>
@@ -401,8 +356,6 @@ export function DesignPartners() {
                   id="email"
                   name="email"
                   required
-                  value={formData.email}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-slate-50 focus:outline-none focus:border-teal-500 transition-colors"
                 />
               </div>

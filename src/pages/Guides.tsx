@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 import { FileText, Download, BookOpen } from 'lucide-react';
 
@@ -11,7 +10,8 @@ export function Guides() {
       type: 'Whitepaper',
       pages: '28 pages',
       format: 'PDF',
-      topics: ['Risk Scoring', 'EPSS', 'KEV', 'Vulnerability Management']
+      topics: ['Risk Scoring', 'EPSS', 'KEV', 'Vulnerability Management'],
+      pdfFile: 'risk-model-deep-dive.pdf'
     },
     {
       id: 2,
@@ -20,7 +20,8 @@ export function Guides() {
       type: 'Implementation Guide',
       pages: '42 pages',
       format: 'PDF',
-      topics: ['APRA CPS 234', 'Compliance', 'Financial Services', 'Australia']
+      topics: ['APRA CPS 234', 'Compliance', 'Financial Services', 'Australia'],
+      pdfFile: 'apra-cps234-automation-pack.pdf'
     },
     {
       id: 3,
@@ -29,7 +30,8 @@ export function Guides() {
       type: 'Technical Guide',
       pages: '35 pages',
       format: 'PDF',
-      topics: ['Evidence-as-Code', 'CI/CD', 'SLSA', 'Cryptography']
+      topics: ['Evidence-as-Code', 'CI/CD', 'SLSA', 'Cryptography'],
+      pdfFile: 'evidence-as-code-architecture-guide.pdf'
     },
     {
       id: 4,
@@ -38,7 +40,8 @@ export function Guides() {
       type: 'Best Practices',
       pages: '24 pages',
       format: 'PDF',
-      topics: ['SBOM', 'Supply Chain Security', 'CycloneDX', 'SPDX']
+      topics: ['SBOM', 'Supply Chain Security', 'CycloneDX', 'SPDX'],
+      pdfFile: 'sbom-integration-best-practices.pdf'
     },
     {
       id: 5,
@@ -47,7 +50,8 @@ export function Guides() {
       type: 'Technical Guide',
       pages: '31 pages',
       format: 'PDF',
-      topics: ['Scanner Integration', 'Deduplication', 'Risk Prioritization']
+      topics: ['Scanner Integration', 'Deduplication', 'Risk Prioritization'],
+      pdfFile: 'multi-scanner-correlation-strategies.pdf'
     },
     {
       id: 6,
@@ -56,7 +60,8 @@ export function Guides() {
       type: 'Compliance Guide',
       pages: '38 pages',
       format: 'PDF',
-      topics: ['SOC 2', 'Compliance', 'Audit', 'Evidence Automation']
+      topics: ['SOC 2', 'Compliance', 'Audit', 'Evidence Automation'],
+      pdfFile: 'soc2-type-ii-evidence-automation.pdf'
     }
   ];
 
@@ -109,10 +114,15 @@ export function Guides() {
                   <span>•</span>
                   <span>{guides[0].format}</span>
                 </div>
-                <Link to="/resources/guides" className="inline-flex items-center gap-2 px-6 py-3 bg-teal-500 text-slate-950 rounded-lg font-semibold hover:bg-teal-400 transition-all">
+                <a
+                  href={`/pdfs/${guides[0].pdfFile}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-teal-500 text-slate-950 rounded-lg font-semibold hover:bg-teal-400 transition-all"
+                >
                   <Download size={20} />
                   Download Whitepaper
-                </Link>
+                </a>
               </div>
               <div className="bg-gradient-to-br from-teal-500/20 to-blue-500/20 flex items-center justify-center p-12">
                 <FileText className="text-teal-400" size={120} />
@@ -159,10 +169,15 @@ export function Guides() {
                     <span>•</span>
                     <span>{guide.format}</span>
                   </div>
-                  <Link to="/resources/guides" className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all">
+                  <a
+                    href={`/pdfs/${guide.pdfFile}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all"
+                  >
                     <Download size={18} />
                     Download
-                  </Link>
+                  </a>
                 </div>
               </div>
             ))}

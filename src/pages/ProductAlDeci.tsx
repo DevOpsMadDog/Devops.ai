@@ -187,9 +187,6 @@ export function ProductAlDeci() {
     }
   };
 
-  const handleDownloadOnePager = () => {
-    alert('PDF generation coming soon. Please contact us for the one-pager.');
-  };
 
   return (
     <>
@@ -220,13 +217,15 @@ export function ProductAlDeci() {
             >
               Request Access
             </Link>
-            <button
-              onClick={handleDownloadOnePager}
+            <a
+              href="/pdfs/aldeci-one-pager.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"
             >
               <Download size={20} />
               Download Product One-Pager
-            </button>
+            </a>
             <Link
               to="/contact"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700 text-center"
@@ -1042,13 +1041,15 @@ export function ProductAlDeci() {
             >
               Request Access
             </Link>
-            <button
-              onClick={handleDownloadOnePager}
+            <a
+              href="/pdfs/aldeci-one-pager.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold text-lg hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"
             >
               <Download size={20} />
               Download One-Pager
-            </button>
+            </a>
           </div>
         </div>
       </section>

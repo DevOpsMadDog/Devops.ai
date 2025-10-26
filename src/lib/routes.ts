@@ -71,6 +71,13 @@ export const routes: RouteConfig[] = [
     component: 'Contact'
   },
   {
+    path: '/thank-you',
+    title: 'Thank You | DevOps.ai',
+    description: 'Thank you for contacting DevOps.ai. We\'ll be in touch soon.',
+    ogImage: '/images/og-contact.png',
+    component: 'ThankYou'
+  },
+  {
     path: '/products/ai-data-quality',
     title: 'AI Data Quality for Multi-Agent LLMs - Coming Soon | DevOps.ai',
     description: 'Ensure reliable agent collaboration by validating data quality, provenance, and grounding across agent workflows.',

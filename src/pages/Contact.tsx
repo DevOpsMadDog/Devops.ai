@@ -4,35 +4,6 @@ import { Mail, MessageSquare, Calendar } from 'lucide-react';
 
 export function Contact() {
   const [activeForm, setActiveForm] = useState<'demo' | 'access' | 'general'>('demo');
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    role: '',
-    message: '',
-    productInterest: 'aldeci'
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submission:', { type: activeForm, data: formData });
-    alert(`Thank you for your ${activeForm === 'demo' ? 'demo request' : activeForm === 'access' ? 'access request' : 'message'}! We will contact you within 1 business day.`);
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      role: '',
-      message: '',
-      productInterest: 'aldeci'
-    });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
 
   return (
     <>
@@ -108,7 +79,18 @@ export function Contact() {
 
           {/* Contact Form */}
           <div className="max-w-3xl mx-auto">
-            <form onSubmit={handleSubmit} className="bg-slate-900 border border-slate-800 rounded-xl p-8 space-y-6">
+            <form 
+              action="https://formsubmit.co/contact@devops.ai" 
+              method="POST"
+              className="bg-slate-900 border border-slate-800 rounded-xl p-8 space-y-6"
+            >
+              {/* Hidden fields for Formsubmit.co configuration */}
+              <input type="hidden" name="_subject" value={`DevOps.ai ${activeForm === 'demo' ? 'Demo Request' : activeForm === 'access' ? 'Access Request' : 'General Inquiry'}`} />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="https://devops-ai-website-mc67od8m.devinapps.com/thank-you" />
+              <input type="hidden" name="form_type" value={activeForm} />
+              
               <div>
                 <h2 className="text-2xl font-bold text-slate-50 mb-2">
                   {activeForm === 'demo' && 'Book a Demo'}
@@ -132,8 +114,6 @@ export function Contact() {
                     id="name"
                     name="name"
                     required
-                    value={formData.name}
-                    onChange={handleChange}
                     className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-lg text-slate-50 focus:outline-none focus:border-teal-500 transition-colors"
                   />
                 </div>
@@ -147,8 +127,6 @@ export function Contact() {
                     id="email"
                     name="email"
                     required
-                    value={formData.email}
-                    onChange={handleChange}
                     className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-lg text-slate-50 focus:outline-none focus:border-teal-500 transition-colors"
                   />
                 </div>
@@ -164,8 +142,6 @@ export function Contact() {
                     id="company"
                     name="company"
                     required
-                    value={formData.company}
-                    onChange={handleChange}
                     className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-lg text-slate-50 focus:outline-none focus:border-teal-500 transition-colors"
                   />
                 </div>
@@ -178,8 +154,6 @@ export function Contact() {
                     id="role"
                     name="role"
                     required
-                    value={formData.role}
-                    onChange={handleChange}
                     className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-lg text-slate-50 focus:outline-none focus:border-teal-500 transition-colors"
                   >
                     <option value="">Select role</option>
@@ -203,8 +177,6 @@ export function Contact() {
                   <select
                     id="productInterest"
                     name="productInterest"
-                    value={formData.productInterest}
-                    onChange={handleChange}
                     className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-lg text-slate-50 focus:outline-none focus:border-teal-500 transition-colors"
                   >
                     <option value="aldeci">AlDeci</option>
@@ -231,8 +203,6 @@ export function Contact() {
                       ? 'Describe your use case, team size, and timeline for getting started with AlDeci...'
                       : 'Your message...'
                   }
-                  value={formData.message}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-lg text-slate-50 focus:outline-none focus:border-teal-500 transition-colors"
                 />
               </div>

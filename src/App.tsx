@@ -12,6 +12,7 @@ const Blog = lazy(() => import('./pages/Blog').then(module => ({ default: module
 const Guides = lazy(() => import('./pages/Guides').then(module => ({ default: module.Guides })));
 const About = lazy(() => import('./pages/About').then(module => ({ default: module.About })));
 const Contact = lazy(() => import('./pages/Contact').then(module => ({ default: module.Contact })));
+const ThankYou = lazy(() => import('./pages/ThankYou').then(module => ({ default: module.ThankYou })));
 const ComingSoon = lazy(() => import('./pages/ComingSoon').then(module => ({ default: module.ComingSoon })));
 const Privacy = lazy(() => import('./pages/Privacy').then(module => ({ default: module.Privacy })));
 const Terms = lazy(() => import('./pages/Terms').then(module => ({ default: module.Terms })));
@@ -45,6 +46,7 @@ function App() {
               <Route path="/resources/guides" element={<Guides />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/thank-you" element={<ThankYou />} />
               <Route path="/products/ai-data-quality" element={<ComingSoon />} />
               <Route path="/legal/privacy" element={<Privacy />} />
               <Route path="/legal/terms" element={<Terms />} />
