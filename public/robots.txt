@@ -1,0 +1,9 @@
+# robots.txt for DevOps.ai
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://devops.ai/sitemap.xml
+
+# Crawl-delay for polite crawlers
+Crawl-delay: 1
