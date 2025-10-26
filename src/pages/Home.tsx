@@ -75,15 +75,15 @@ export function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <p className="text-center text-sm text-slate-400 mb-6">Integrates with your existing tools</p>
           <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 opacity-60">
-            <div className="text-slate-400 font-semibold">Azure</div>
-            <div className="text-slate-400 font-semibold">AWS</div>
-            <div className="text-slate-400 font-semibold">GitHub</div>
-            <div className="text-slate-400 font-semibold">GitLab</div>
-            <div className="text-slate-400 font-semibold">Kubernetes</div>
-            <div className="text-slate-400 font-semibold">Terraform</div>
-            <div className="text-slate-400 font-semibold">Snyk</div>
-            <div className="text-slate-400 font-semibold">Wiz</div>
-            <div className="text-slate-400 font-semibold">Tenable</div>
+            <a href="https://azure.microsoft.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 font-semibold hover:text-teal-400 transition-colors">Azure</a>
+            <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 font-semibold hover:text-teal-400 transition-colors">AWS</a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 font-semibold hover:text-teal-400 transition-colors">GitHub</a>
+            <a href="https://gitlab.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 font-semibold hover:text-teal-400 transition-colors">GitLab</a>
+            <a href="https://kubernetes.io" target="_blank" rel="noopener noreferrer" className="text-slate-400 font-semibold hover:text-teal-400 transition-colors">Kubernetes</a>
+            <a href="https://www.terraform.io" target="_blank" rel="noopener noreferrer" className="text-slate-400 font-semibold hover:text-teal-400 transition-colors">Terraform</a>
+            <a href="https://snyk.io" target="_blank" rel="noopener noreferrer" className="text-slate-400 font-semibold hover:text-teal-400 transition-colors">Snyk</a>
+            <a href="https://www.wiz.io" target="_blank" rel="noopener noreferrer" className="text-slate-400 font-semibold hover:text-teal-400 transition-colors">Wiz</a>
+            <a href="https://www.tenable.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 font-semibold hover:text-teal-400 transition-colors">Tenable</a>
           </div>
         </div>
       </section>
@@ -107,9 +107,12 @@ export function Home() {
                 <Network className="text-teal-400" size={24} />
               </div>
               <h3 className="text-xl font-semibold text-slate-50 mb-3">Unified Intelligence</h3>
-              <p className="text-slate-400">
+              <p className="text-slate-400 mb-4">
                 Correlate SBOMs, SARIF findings, CVE feeds, VEX, CNAPP outputs, and business context into a single decision graph.
               </p>
+              <Link to="/product/aldeci#architecture" className="text-teal-400 hover:text-teal-300 text-sm font-semibold transition-colors">
+                Learn more →
+              </Link>
             </div>
 
             {/* Card 2 */}
@@ -118,9 +121,12 @@ export function Home() {
                 <Shield className="text-blue-400" size={24} />
               </div>
               <h3 className="text-xl font-semibold text-slate-50 mb-3">Context-Aware Risk</h3>
-              <p className="text-slate-400">
+              <p className="text-slate-400 mb-4">
                 Risk scores combine EPSS, KEV, version lag, exposure flags, and data sensitivity—not just CVSS.
               </p>
+              <Link to="/product/aldeci" className="text-teal-400 hover:text-teal-300 text-sm font-semibold transition-colors">
+                Learn more →
+              </Link>
             </div>
 
             {/* Card 3 */}
@@ -129,9 +135,12 @@ export function Home() {
                 <FileCheck className="text-teal-400" size={24} />
               </div>
               <h3 className="text-xl font-semibold text-slate-50 mb-3">Evidence-as-Code</h3>
-              <p className="text-slate-400">
+              <p className="text-slate-400 mb-4">
                 Every decision produces cryptographically signed bundles with SLSA provenance for SOC 2, ISO 27001, and APRA CPS 234.
               </p>
+              <Link to="/product/aldeci#evidence" className="text-teal-400 hover:text-teal-300 text-sm font-semibold transition-colors">
+                Learn more →
+              </Link>
             </div>
 
             {/* Card 4 */}
@@ -140,9 +149,12 @@ export function Home() {
                 <Zap className="text-blue-400" size={24} />
               </div>
               <h3 className="text-xl font-semibold text-slate-50 mb-3">Seamless Integrations</h3>
-              <p className="text-slate-400">
+              <p className="text-slate-400 mb-4">
                 Push-based ingestion means minimal connectors. Works with GitHub Actions, GitLab CI, Azure DevOps, and Jenkins.
               </p>
+              <Link to="/product/aldeci#integrations" className="text-teal-400 hover:text-teal-300 text-sm font-semibold transition-colors">
+                Learn more →
+              </Link>
             </div>
           </div>
         </div>

@@ -710,7 +710,7 @@ export function ProductAlDeci() {
       </section>
 
       {/* Evidence Bundles */}
-      <section className="bg-slate-900 py-20">
+      <section id="evidence" className="bg-slate-900 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-slate-50 mb-12">Evidence Bundles</h2>
 
@@ -803,7 +803,7 @@ export function ProductAlDeci() {
       </section>
 
       {/* Integrations */}
-      <section className="bg-slate-950 py-20">
+      <section id="integrations" className="bg-slate-950 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-slate-50 mb-12">Integrations</h2>
 

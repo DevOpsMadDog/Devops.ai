@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 
@@ -91,9 +92,9 @@ export function Blog() {
                 </div>
                 <span>{blogPosts[0].readTime}</span>
               </div>
-              <button className="px-6 py-3 bg-teal-500 text-slate-950 rounded-lg font-semibold hover:bg-teal-400 transition-all flex items-center gap-2">
+              <Link to="/blog" className="inline-flex items-center gap-2 px-6 py-3 bg-teal-500 text-slate-950 rounded-lg font-semibold hover:bg-teal-400 transition-all">
                 Read Article <ArrowRight size={20} />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -128,9 +129,9 @@ export function Blog() {
                     </div>
                     <span>{post.readTime}</span>
                   </div>
-                  <button className="text-teal-400 font-semibold hover:text-teal-300 transition-colors flex items-center gap-2">
+                  <Link to="/blog" className="text-teal-400 font-semibold hover:text-teal-300 transition-colors flex items-center gap-2">
                     Read More <ArrowRight size={18} />
-                  </button>
+                  </Link>
                 </div>
               </article>
             ))}

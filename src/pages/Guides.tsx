@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 import { FileText, Download, BookOpen } from 'lucide-react';
 
@@ -108,10 +109,10 @@ export function Guides() {
                   <span>•</span>
                   <span>{guides[0].format}</span>
                 </div>
-                <button className="px-6 py-3 bg-teal-500 text-slate-950 rounded-lg font-semibold hover:bg-teal-400 transition-all flex items-center gap-2">
+                <Link to="/resources/guides" className="inline-flex items-center gap-2 px-6 py-3 bg-teal-500 text-slate-950 rounded-lg font-semibold hover:bg-teal-400 transition-all">
                   <Download size={20} />
                   Download Whitepaper
-                </button>
+                </Link>
               </div>
               <div className="bg-gradient-to-br from-teal-500/20 to-blue-500/20 flex items-center justify-center p-12">
                 <FileText className="text-teal-400" size={120} />
@@ -158,10 +159,10 @@ export function Guides() {
                     <span>•</span>
                     <span>{guide.format}</span>
                   </div>
-                  <button className="px-4 py-2 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all flex items-center gap-2">
+                  <Link to="/resources/guides" className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all">
                     <Download size={18} />
                     Download
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
