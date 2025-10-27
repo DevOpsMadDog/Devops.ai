@@ -1,12 +1,16 @@
-# Enterprise Vulnerability Management: Real-World Examples + Competitive Snapshot
+# Enterprise Vulnerability Management: Industry Examples + Competitive Snapshot
 
-**How large enterprises struggle with vulnerability management and how AlDeci solves these challenges**
+**DISCLAIMER**: Archetypal scenarios for illustration only. DevOps.ai has no customer deployments yet. Outcome percentages are target benchmarks based on third-party research and internal modeling; see references.
+
+**How large enterprises typically struggle with vulnerability management and how AlDeci is designed to address these challenges**
 
 ---
 
 ## How Big Enterprises Run Vulnerability Management Today
 
-### Archetype 1: Fortune 100 Financial Services (CISO + AppSec Lead)
+### Archetype 1: Fortune 100 Financial Services (Illustrative)
+
+*Hypothetical profile based on industry patterns; not a real DevOps.ai customer.*
 
 **Scale & Context:**
 - 500+ developers across 15 business units
@@ -33,7 +37,9 @@
 
 ---
 
-### Archetype 2: Global SaaS Platform (DevSecOps + Platform Engineering)
+### Archetype 2: Global SaaS Platform (Illustrative)
+
+*Hypothetical profile based on industry patterns; not a real DevOps.ai customer.*
 
 **Scale & Context:**
 - 200+ microservices across AWS, Azure, and GCP
@@ -60,7 +66,9 @@
 
 ---
 
-### Archetype 3: Regulated Healthcare Provider (CISO + Compliance)
+### Archetype 3: Regulated Healthcare Provider (Illustrative)
+
+*Hypothetical profile based on industry patterns; not a real DevOps.ai customer.*
 
 **Scale & Context:**
 - 100+ applications handling PHI (Protected Health Information)
@@ -87,18 +95,18 @@
 
 ---
 
-## How AlDeci Solves These Challenges
+## How AlDeci Is Designed to Address These Challenges
 
 ### Context Fusion Engine (30-Minute Onboarding)
 
 **Capability**: Automatically correlates scanner outputs with SBOM components, CVE data, CISA KEV, EPSS scores, version lag, and business context (exposure, data sensitivity, criticality).
 
-**How It Helps**:
-- **Fortune 100 Bank**: Reduces 15,000 findings to 2,400 actionable items (−60% noise) by filtering out non-exploitable CVEs and duplicates across 10 scanners
-- **Global SaaS**: Provides unified risk view across 8 scanners in 30 minutes; developers see "Why this matters" context in every finding
-- **Healthcare Provider**: Correlates PHI exposure flags with vulnerability severity; automatically prioritizes findings in patient-facing systems
+**How It Would Help in These Scenarios**:
+- **Fortune 100 Bank**: Targets ≈60% noise reduction by filtering out non-exploitable CVEs and duplicates across multiple scanners
+- **Global SaaS**: Would provide unified risk view across scanners in 30 minutes; developers would see "Why this matters" context in every finding
+- **Healthcare Provider**: Would correlate PHI exposure flags with vulnerability severity; automatically prioritize findings in patient-facing systems
 
-**ROI Target**: 60% noise reduction, 30-minute onboarding[^1]
+**Target Outcome (Benchmark)**: 60% noise reduction, 30-minute onboarding[^1]
 
 ---
 
@@ -106,12 +114,12 @@
 
 **Capability**: Generates cryptographically signed evidence bundles with SLSA v1 provenance attestations, normalized SBOMs, risk reports, SARIF findings, and policy evaluations. Supports 7-year retention with immutable storage.
 
-**How It Helps**:
-- **Fortune 100 Bank**: Automates SOC 2 evidence collection for CC7.1, CC7.2, CC7.3 controls; reduces audit prep time from 240 hours to 72 hours (−70%)
-- **Global SaaS**: Generates signed evidence bundles for every deployment; provides audit trail for "who approved this exception and why"
-- **Healthcare Provider**: Stores 7 years of cryptographically signed evidence with tamper-proof audit trails; satisfies HITRUST attestation requirements
+**How It Would Help in These Scenarios**:
+- **Fortune 100 Bank**: Would automate SOC 2 evidence collection for CC7.1, CC7.2, CC7.3 controls; targets ≈70% audit prep time savings
+- **Global SaaS**: Would generate signed evidence bundles for every deployment; provide audit trail for "who approved this exception and why"
+- **Healthcare Provider**: Would store 7 years of cryptographically signed evidence with tamper-proof audit trails; designed to satisfy HITRUST attestation requirements
 
-**ROI Target**: 70% audit preparation time savings[^1]
+**Target Outcome (Benchmark)**: 70% audit preparation time savings[^1]
 
 ---
 
@@ -119,12 +127,12 @@
 
 **Capability**: Policy-as-code overlay that tunes CI/CD gates based on repo maturity, historical data, and business context. Supports "block KEV vulnerabilities" policies with context-sensitive thresholds.
 
-**How It Helps**:
-- **Fortune 100 Bank**: Enforces "block deployments with CISA KEV vulnerabilities" across 200+ repos; provides explainable rationale for every block decision
-- **Global SaaS**: Adaptive gates reduce CI pipeline failures from 30% to 8%; experimental repos get lenient policies, production services get strict policies
-- **Healthcare Provider**: Enforces HIPAA-specific policies (e.g., "block deployments with PHI exposure + critical CVE"); provides compliance-ready policy audit logs
+**How It Would Help in These Scenarios**:
+- **Fortune 100 Bank**: Would enforce "block deployments with CISA KEV vulnerabilities" across repos; provide explainable rationale for every block decision
+- **Global SaaS**: Adaptive gates target stabilized CI pipelines; experimental repos would get lenient policies, production services would get strict policies
+- **Healthcare Provider**: Would enforce HIPAA-specific policies (e.g., "block deployments with PHI exposure + critical CVE"); provide compliance-ready policy audit logs
 
-**ROI Target**: 40% MTTR improvement, stabilized CI pipelines[^1]
+**Target Outcome (Benchmark)**: 40% MTTR improvement, stabilized CI pipelines[^1]
 
 ---
 
@@ -132,12 +140,12 @@
 
 **Capability**: Probabilistic models that estimate posterior exploit probability using Bayesian analytics and forecast vulnerability state transitions using Markov chains. Provides forward-looking risk assessments.
 
-**How It Helps**:
-- **Fortune 100 Bank**: Bayesian posterior improves precision by 8% over static EPSS; reduces false-positive remediation by 14%
-- **Global SaaS**: Markov forecasting predicts which vulnerabilities will persist in "Open" state for 4+ weeks; teams prioritize accordingly
-- **Healthcare Provider**: Probabilistic risk scores provide board-ready metrics: "82% probability this CVE will be exploited within 90 days"
+**How It Would Help in These Scenarios**:
+- **Fortune 100 Bank**: Bayesian posterior targets 8% precision improvement over static EPSS; aims for 14% false-positive reduction
+- **Global SaaS**: Markov forecasting would predict which vulnerabilities will persist in "Open" state for 4+ weeks; teams would prioritize accordingly
+- **Healthcare Provider**: Probabilistic risk scores would provide board-ready metrics with exploit probability estimates
 
-**ROI Target**: 8% precision improvement, 14% false-positive reduction[^2]
+**Target Outcome (Benchmark)**: 8% precision improvement, 14% false-positive reduction[^2]
 
 ---
 
@@ -157,6 +165,31 @@
 
 ---
 
+## FixOps vs Apiiro – Detailed Comparison
+
+| Feature | FixOps | Apiiro |
+|---------|--------|--------|
+| **Mode Support** | ✅ Demo + Production | ❌ Production only |
+| **Decision Transparency** | ✅ Full breakdown + evidence | ⚠️ Limited (black box AI) |
+| **Consensus Validation** | ✅ 85%+ threshold, multi-source | ⚠️ Non-transparent AI logic |
+| **Code Analysis Depth** | ⚠️ Service-level | ✅ Code-to-runtime mapping |
+| **Threat Intelligence** | ⚠️ Configurable feeds | ✅ Live threat feeds |
+| **AI Model Type** | 🤖 LLM-based pattern match | 🧠 Behavioral anomaly detection |
+| **Explainability** | ✅ Step-by-step with scores | ⚠️ Risk score only |
+| **Deployment Options** | ✅ Demo → Prod | ❌ Enterprise only |
+| **Framework Openness** | ✅ Transparent, customizable | ❌ Proprietary |
+
+### Example Decision Comparison
+
+| Metric | FixOps | Apiiro |
+|--------|--------|--------|
+| **Output** | ALLOW (92% confidence) | Risk Score: 8.5 |
+| **Details** | - Vector DB: 94% match<br>- Regression: 1,247 cases passed<br>- Policies: 0 violations<br>- Context: PCI critical<br>- Evidence: EVD-2024-0847 | Opaque AI decision, limited breakdown |
+| **Audit Evidence** | ✅ Cryptographically signed | ⚠️ Internal system logs only |
+| **Customization** | ✅ Policy & threshold configurable | ❌ Fixed proprietary logic |
+
+---
+
 ## AlDeci's Unique Position
 
 **Gap Statement**: AlDeci occupies the gap between lightweight triage tools (Aikido) and heavyweight governance platforms (Apiiro) by delivering **instant-on contextual risk re-scoring with automated evidence bundles**, enabling teams to prove risk reduction without months of tuning.[^1]
@@ -165,13 +198,13 @@
 1. **30-Minute Onboarding**: Context Fusion Engine correlates scanner data with asset criticality and business tags within 30 minutes (vs. weeks for Apiiro graph setup)
 2. **Evidence-as-Code**: Auto-builds audit-ready bundles with traceable waivers and 7-year retention (vs. Aikido's limited compliance workflows)
 3. **Adaptive Guardrails**: Policy overlay that auto-tunes CI gates based on repo maturity and historical data (vs. Apiiro's one-size-fits-all strict policies)
-4. **Probabilistic Risk Models**: Bayesian analytics and Markov forecasting provide forward-looking risk assessments (unique to AlDeci)
+4. **Probabilistic Risk Models**: Includes Bayesian analytics and Markov forecasting for forward-looking risk assessments
 
 ---
 
-## Proven Outcomes (Target Benchmarks)
+## Target Outcomes (Benchmarks)
 
-Based on industry research on context-aware security and vulnerability prioritization[^1][^5]:
+Based on industry research on context-aware security and vulnerability prioritization[^1][^5]. These are projected outcomes, not realized customer results:
 
 - **60% Noise Reduction**: Context fusion eliminates duplicate and non-exploitable findings
 - **40% MTTR Improvement**: Risk-based prioritization focuses teams on exploitable issues
@@ -199,6 +232,8 @@ Based on industry research on context-aware security and vulnerability prioritiz
 **DevOps.ai** | Sydney, Australia | https://devops.ai
 
 © 2025 DevOps.ai. All rights reserved.
+
+**DISCLAIMER**: All enterprise scenarios are archetypal illustrations based on industry patterns. DevOps.ai has no customer deployments yet. Outcome percentages are target benchmarks based on third-party research and internal modeling; see references. Competitive attributes are based on public materials as of October 2025 and are directional only.
 
 ---
 
