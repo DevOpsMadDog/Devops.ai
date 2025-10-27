@@ -106,6 +106,21 @@ function DecisionFlowDiagram() {
       {/* Arrow */}
       <path d="M 200 110 L 280 110" stroke="#14b8a6" strokeWidth="2" markerEnd="url(#arrowhead2)" />
       
+      {/* Probabilistic Models (feeding into Risk Scoring) */}
+      <rect x="280" y="180" width="150" height="60" fill="#1e293b" stroke="#8b5cf6" strokeWidth="2" rx="8" />
+      <text x="355" y="205" fill="#f1f5f9" fontSize="13" fontWeight="bold" textAnchor="middle">
+        Probabilistic Models
+      </text>
+      <text x="355" y="220" fill="#94a3b8" fontSize="11" textAnchor="middle">
+        Bayesian posterior
+      </text>
+      <text x="355" y="233" fill="#94a3b8" fontSize="11" textAnchor="middle">
+        Markov forecast
+      </text>
+      
+      {/* Arrow from Probabilistic to Risk Scoring */}
+      <path d="M 355 180 L 355 140" stroke="#8b5cf6" strokeWidth="2" markerEnd="url(#arrowhead3)" />
+      
       {/* Risk Scoring */}
       <rect x="280" y="80" width="150" height="60" fill="#1e293b" stroke="#3b82f6" strokeWidth="2" rx="8" />
       <text x="355" y="110" fill="#f1f5f9" fontSize="14" fontWeight="bold" textAnchor="middle">
@@ -161,10 +176,13 @@ function DecisionFlowDiagram() {
         SOC2 • ISO • CPS234
       </text>
       
-      {/* Arrow marker definition */}
+      {/* Arrow marker definitions */}
       <defs>
         <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
           <polygon points="0 0, 10 3, 0 6" fill="#14b8a6" />
+        </marker>
+        <marker id="arrowhead3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+          <polygon points="0 0, 10 3, 0 6" fill="#8b5cf6" />
         </marker>
       </defs>
     </svg>
@@ -218,7 +236,7 @@ export function ProductAlDeci() {
               Request Access
             </Link>
             <a
-              href="/pdfs/aldeci-one-pager-v20251033.pdf"
+              href="/pdfs/aldeci-one-pager-v20251034.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"
@@ -386,7 +404,7 @@ export function ProductAlDeci() {
           </div>
 
           {/* Decision Flow Diagram */}
-          <div className="mb-12">
+          <div id="decision-flow" className="mb-12">
             <h3 className="text-2xl font-semibold text-teal-400 mb-6 text-center">Decision & Evidence Flow</h3>
             <div className="bg-slate-950 border border-slate-800 rounded-xl p-8">
               <DecisionFlowDiagram />
@@ -735,109 +753,6 @@ export function ProductAlDeci() {
             </table>
           </div>
 
-          {/* Feature Explanations */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-teal-400 mb-4">🔄 Push-Based Ingestion</h3>
-              <p className="text-slate-300 mb-3">
-                AlDeci uses a <strong>push-based model</strong> where teams push SBOM/SARIF artifacts from any tool via REST API or CLI. No complex connectors or scanner integrations required.
-              </p>
-              <p className="text-sm text-slate-400">
-                <strong>Why it matters:</strong> 30-minute onboarding vs. weeks for pull-based platforms that require connector setup and tuning.
-              </p>
-            </div>
-
-            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-teal-400 mb-4">🔧 Multi-Format Normalizer</h3>
-              <p className="text-slate-300 mb-3">
-                AlDeci's <strong>normalizer</strong> parses CycloneDX, SPDX, SARIF, VEX, and CNAPP formats into a canonical schema, enabling unified analysis across heterogeneous tools.
-              </p>
-              <p className="text-sm text-slate-400">
-                <strong>Why it matters:</strong> Works with any scanner tool without vendor lock-in or proprietary formats.
-              </p>
-            </div>
-
-            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-teal-400 mb-4">🤖 LLM Functions</h3>
-              <p className="text-slate-300 mb-3">
-                AlDeci uses <strong>RAG-backed LLM</strong> with vector database for pattern matching (94% match threshold) and reasoning with explainable step-by-step outputs.
-              </p>
-              <p className="text-sm text-slate-400">
-                <strong>Why it matters:</strong> Transparent AI decisions vs. black-box behavioral AI in competitors.
-              </p>
-            </div>
-
-            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-teal-400 mb-4">📊 Bayesian Analytics</h3>
-              <p className="text-slate-300 mb-3">
-                AlDeci applies <strong>Bayesian posterior probability</strong> using EPSS-informed priors to project exploit likelihood, achieving 8% precision improvement over static scoring.
-              </p>
-              <p className="text-sm text-slate-400">
-                <strong>Why it matters:</strong> Forward-looking risk assessment vs. backward-looking CVSS scores.
-              </p>
-            </div>
-
-            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-teal-400 mb-4">🔮 Markov Chain Forecasting</h3>
-              <p className="text-slate-300 mb-3">
-                AlDeci uses a <strong>5-state Markov model</strong> (Open, Triaged, In Remediation, Remediated, Reopened) to forecast vulnerability trends with 76% state prediction accuracy.
-              </p>
-              <p className="text-sm text-slate-400">
-                <strong>Why it matters:</strong> Predict remediation timelines and resource needs vs. reactive-only approaches.
-              </p>
-            </div>
-
-            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-teal-400 mb-4">🛡️ MITRE ATT&CK Checks</h3>
-              <p className="text-slate-300 mb-3">
-                AlDeci integrates <strong>configurable threat intelligence feeds</strong> including MITRE ATT&CK, CISA KEV, and custom threat intel to map vulnerabilities to attack techniques.
-              </p>
-              <p className="text-sm text-slate-400">
-                <strong>Why it matters:</strong> Understand attacker tactics and prioritize based on threat landscape.
-              </p>
-            </div>
-
-            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-teal-400 mb-4">📦 Evidence Packs</h3>
-              <p className="text-slate-300 mb-3">
-                AlDeci auto-generates <strong>cryptographically signed evidence bundles</strong> with SLSA v1 provenance attestations, 7-year retention, and tamper-proof audit trails.
-              </p>
-              <p className="text-sm text-slate-400">
-                <strong>Why it matters:</strong> Automated compliance evidence vs. manual screenshot collection and internal logs.
-              </p>
-            </div>
-
-            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-teal-400 mb-4">🔒 Local/Air-Gapped Deployment</h3>
-              <p className="text-slate-300 mb-3">
-                AlDeci supports <strong>full on-premises and air-gapped deployments</strong> with no internet connectivity required, ideal for regulated industries and government.
-              </p>
-              <p className="text-sm text-slate-400">
-                <strong>Why it matters:</strong> Data sovereignty and compliance for finance, healthcare, defense sectors.
-              </p>
-            </div>
-
-            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-teal-400 mb-4">⚙️ Overlay Customization</h3>
-              <p className="text-slate-300 mb-3">
-                AlDeci uses <strong>overlay configuration</strong> to toggle modules (context_engine, guardrails, compliance, ai_agents, etc.) and supports OPA/Rego policies for fine-grained control.
-              </p>
-              <p className="text-sm text-slate-400">
-                <strong>Why it matters:</strong> Flexible customization without rigid policy-as-code frameworks.
-              </p>
-            </div>
-
-            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
-              <h3 className="text-xl font-semibold text-teal-400 mb-4">🌍 Data Sovereignty</h3>
-              <p className="text-slate-300 mb-3">
-                AlDeci provides <strong>full control over data location</strong> with on-premises and air-gapped deployment options, ensuring compliance with data residency requirements.
-              </p>
-              <p className="text-sm text-slate-400">
-                <strong>Why it matters:</strong> Meet GDPR, APRA CPS 234, and other regulatory requirements for data sovereignty.
-              </p>
-            </div>
-          </div>
-
           {/* Key Differentiators */}
           <div className="bg-gradient-to-r from-teal-500/10 to-blue-500/10 border border-teal-500/20 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-slate-50 mb-4 text-center">
@@ -862,7 +777,7 @@ export function ProductAlDeci() {
       </section>
 
       {/* Risk & Decision Engines */}
-      <section className="bg-slate-950 py-20">
+      <section id="risk" className="bg-slate-950 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-slate-50 mb-12">Risk & Decision Engines</h2>
 
@@ -888,6 +803,39 @@ export function ProductAlDeci() {
                 <h4 className="text-lg font-semibold text-slate-50 mb-2">Exposure Flags</h4>
                 <p className="text-sm text-slate-400">Internet-facing, data sensitivity, criticality</p>
               </div>
+            </div>
+          </div>
+
+          <div id="probabilistic" className="mb-12">
+            <h3 className="text-2xl font-semibold text-teal-400 mb-6">Probabilistic Models</h3>
+            <p className="text-slate-300 mb-6">
+              AlDeci enhances traditional risk scoring with forward-looking probabilistic models that project exploit likelihood and forecast vulnerability trends:
+            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+              <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                <h4 className="text-lg font-semibold text-slate-50 mb-3">Bayesian Risk Projection</h4>
+                <p className="text-slate-400 mb-3">
+                  Applies <strong>Bayesian posterior probability</strong> using EPSS-informed priors to project exploit likelihood. The model computes P(exploit | signals) using Bayes' theorem with calibrated priors from historical exploit data.
+                </p>
+                <p className="text-sm text-slate-500">
+                  <strong>Target benchmark:</strong> ~8% precision improvement over static CVSS scoring (Brier score: 0.12)
+                </p>
+              </div>
+              <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                <h4 className="text-lg font-semibold text-slate-50 mb-3">Markov Chain Trend Forecasting</h4>
+                <p className="text-slate-400 mb-3">
+                  Uses a <strong>5-state Markov model</strong> (Open, Triaged, In Remediation, Remediated, Reopened) to forecast vulnerability state transitions. The transition matrix is learned from historical vulnerability lifecycle data.
+                </p>
+                <p className="text-sm text-slate-500">
+                  <strong>Target benchmark:</strong> ~76% state prediction accuracy enables resource planning and remediation timeline forecasting
+                </p>
+              </div>
+            </div>
+            <div className="bg-slate-950 border border-slate-800 rounded-lg p-6">
+              <h4 className="text-lg font-semibold text-slate-50 mb-3">Score Composition</h4>
+              <p className="text-slate-400">
+                Bayesian posterior and Markov trend outputs feed into the composite risk score via calibrated weights (w_bayes=0.10, w_trend=0.05). The extended formula improves F1 score from 0.87 to 0.91 in validation tests. Detailed mathematical derivations and validation results are available in the <a href="/pdfs/risk-model-deep-dive-v20251034.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300 underline">Risk Model Deep Dive whitepaper</a>.
+              </p>
             </div>
           </div>
 
@@ -1389,7 +1337,7 @@ export function ProductAlDeci() {
           {/* Download CTA */}
           <div className="text-center mb-16">
             <a
-              href="/pdfs/enterprise-vm-competitive-one-pager-v20251033.pdf"
+              href="/pdfs/enterprise-vm-competitive-one-pager-v20251034.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700"
@@ -1466,7 +1414,7 @@ export function ProductAlDeci() {
               Request Access
             </Link>
             <a
-              href="/pdfs/aldeci-one-pager-v20251033.pdf"
+              href="/pdfs/aldeci-one-pager-v20251034.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold text-lg hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"
