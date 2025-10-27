@@ -199,7 +199,7 @@ export function DesignPartners() {
             <input type="hidden" name="_subject" value="DevOps.ai Design Partner Application" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://devops-ai-website-mc67od8m.devinapps.com/thank-you" />
+            <input type="hidden" name="_next" value="/thank-you" />
             <input type="hidden" name="form_type" value="design_partner" />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

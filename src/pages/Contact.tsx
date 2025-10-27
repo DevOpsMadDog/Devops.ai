@@ -88,7 +88,7 @@ export function Contact() {
               <input type="hidden" name="_subject" value={`DevOps.ai ${activeForm === 'demo' ? 'Demo Request' : activeForm === 'access' ? 'Access Request' : 'General Inquiry'}`} />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://devops-ai-website-mc67od8m.devinapps.com/thank-you" />
+              <input type="hidden" name="_next" value="/thank-you" />
               <input type="hidden" name="form_type" value={activeForm} />
               
               <div>
