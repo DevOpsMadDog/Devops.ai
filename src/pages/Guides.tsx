@@ -11,7 +11,7 @@ export function Guides() {
       pages: '28 pages',
       format: 'PDF',
       topics: ['Risk Scoring', 'EPSS', 'KEV', 'Vulnerability Management'],
-      pdfFile: 'risk-model-deep-dive-v20251028.pdf'
+      pdfFile: 'risk-model-deep-dive-v20251029.pdf'
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ export function Guides() {
       pages: '42 pages',
       format: 'PDF',
       topics: ['APRA CPS 234', 'Compliance', 'Financial Services', 'Australia'],
-      pdfFile: 'apra-cps234-automation-pack-v20251028.pdf'
+      pdfFile: 'apra-cps234-automation-pack-v20251029.pdf'
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ export function Guides() {
       pages: '35 pages',
       format: 'PDF',
       topics: ['Evidence-as-Code', 'CI/CD', 'SLSA', 'Cryptography'],
-      pdfFile: 'evidence-as-code-architecture-guide-v20251028.pdf'
+      pdfFile: 'evidence-as-code-architecture-guide-v20251029.pdf'
     },
     {
       id: 4,
@@ -41,7 +41,7 @@ export function Guides() {
       pages: '24 pages',
       format: 'PDF',
       topics: ['SBOM', 'Supply Chain Security', 'CycloneDX', 'SPDX'],
-      pdfFile: 'sbom-integration-best-practices-v20251028.pdf'
+      pdfFile: 'sbom-integration-best-practices-v20251029.pdf'
     },
     {
       id: 5,
@@ -51,7 +51,7 @@ export function Guides() {
       pages: '31 pages',
       format: 'PDF',
       topics: ['Scanner Integration', 'Deduplication', 'Risk Prioritization'],
-      pdfFile: 'multi-scanner-correlation-strategies-v20251028.pdf'
+      pdfFile: 'multi-scanner-correlation-strategies-v20251029.pdf'
     },
     {
       id: 6,
@@ -61,7 +61,17 @@ export function Guides() {
       pages: '38 pages',
       format: 'PDF',
       topics: ['SOC 2', 'Compliance', 'Audit', 'Evidence Automation'],
-      pdfFile: 'soc2-type-ii-evidence-automation-v20251028.pdf'
+      pdfFile: 'soc2-type-ii-evidence-automation-v20251029.pdf'
+    },
+    {
+      id: 7,
+      title: 'Enterprise Vulnerability Management: Real-World Examples + Competitive Snapshot',
+      description: 'How large enterprises struggle with vulnerability management and how AlDeci solves these challenges. Includes real-world archetypes (Fortune 100 Bank, Global SaaS, Regulated Healthcare), proven outcomes, and competitive analysis vs. Aikido Security and Apiiro.',
+      type: 'One-Pager',
+      pages: '2 pages',
+      format: 'PDF',
+      topics: ['Competitive Analysis', 'Enterprise Examples', 'ROI', 'Market Positioning'],
+      pdfFile: 'enterprise-vm-competitive-one-pager-v20251029.pdf'
     }
   ];
 

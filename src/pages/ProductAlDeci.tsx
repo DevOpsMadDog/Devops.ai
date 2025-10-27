@@ -218,7 +218,7 @@ export function ProductAlDeci() {
               Request Access
             </Link>
             <a
-              href="/pdfs/aldeci-one-pager-v20251028.pdf"
+              href="/pdfs/aldeci-one-pager-v20251029.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"
@@ -1034,6 +1034,27 @@ export function ProductAlDeci() {
         </div>
       </section>
 
+      {/* Competitive Positioning */}
+      <section className="bg-slate-950 py-20 border-t border-slate-800">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-slate-50 mb-6">
+            How AlDeci Compares to Alternatives
+          </h2>
+          <p className="text-lg text-slate-400 mb-8">
+            AlDeci occupies the gap between lightweight triage tools and heavyweight governance platforms by delivering instant-on contextual risk re-scoring with automated evidence bundles.
+          </p>
+          <a
+            href="/pdfs/enterprise-vm-competitive-one-pager-v20251029.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700"
+          >
+            <Download size={20} />
+            Download Competitive Analysis + Enterprise Examples
+          </a>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-slate-950 py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -1051,7 +1072,7 @@ export function ProductAlDeci() {
               Request Access
             </Link>
             <a
-              href="/pdfs/aldeci-one-pager-v20251028.pdf"
+              href="/pdfs/aldeci-one-pager-v20251029.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold text-lg hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"

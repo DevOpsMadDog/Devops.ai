@@ -8,7 +8,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-VERSION="v20251028"
+VERSION="v20251029"
 
 CONTENT_DIR="/home/ubuntu/devops-ai-website/content"
 WHITEPAPERS_DIR="$CONTENT_DIR/whitepapers"
@@ -93,6 +93,12 @@ generate_pdf \
     "$WHITEPAPERS_DIR/soc2-type-ii-evidence-automation.md" \
     "$OUTPUT_DIR/soc2-type-ii-evidence-automation-${VERSION}.pdf" \
     "SOC 2 Type II Evidence Automation"
+
+echo -e "\n${GREEN}=== Generating Enterprise VM Competitive One-Pager ===${NC}"
+generate_pdf \
+    "$WHITEPAPERS_DIR/enterprise-vm-competitive-one-pager.md" \
+    "$OUTPUT_DIR/enterprise-vm-competitive-one-pager-${VERSION}.pdf" \
+    "Enterprise Vulnerability Management: Real-World Examples + Competitive Snapshot"
 
 echo -e "\n${GREEN}=== PDF Generation Complete ===${NC}"
 echo -e "${GREEN}Generated PDFs:${NC}"
