@@ -74,6 +74,7 @@ AlDeci unifies security intelligence into a single automated workflow:
 4. **Golden Regression Baseline** - Compares against known-good security states
 5. **OPA Policy Engine** - Policy-as-code enforcement with Rego rules
 6. **SBOM Dependency Analysis** - Transitive vulnerability detection across supply chain
+7. **Probabilistic Models** - Bayesian analytics for risk projection and Markov chain forecasting of vulnerability trends inform prioritization and near-term risk trajectory
 
 **Output Verdicts:**
 - **ALLOW** (Risk < 60): Safe to deploy with evidence bundle

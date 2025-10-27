@@ -218,7 +218,7 @@ export function ProductAlDeci() {
               Request Access
             </Link>
             <a
-              href="/pdfs/aldeci-one-pager-v20251027.pdf"
+              href="/pdfs/aldeci-one-pager-v20251028.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"
@@ -685,6 +685,15 @@ export function ProductAlDeci() {
                   <p className="text-slate-400">Transitive dependency risk and supply chain security</p>
                 </div>
               </div>
+              <div className="flex items-start gap-4">
+                <div className="w-8 h-8 bg-teal-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-teal-400 font-bold">7</span>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-slate-50">Probabilistic Models</h4>
+                  <p className="text-slate-400">Bayesian analytics for risk projection and Markov chain forecasting of vulnerability trends</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1042,7 +1051,7 @@ export function ProductAlDeci() {
               Request Access
             </Link>
             <a
-              href="/pdfs/aldeci-one-pager-v20251027.pdf"
+              href="/pdfs/aldeci-one-pager-v20251028.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold text-lg hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"
