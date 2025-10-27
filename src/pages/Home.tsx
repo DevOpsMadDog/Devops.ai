@@ -160,26 +160,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* Case Study Teaser */}
-      <section className="bg-slate-900 py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-teal-500/10 to-blue-500/10 border border-teal-500/20 rounded-2xl p-12 text-center">
-            <h2 className="text-3xl font-bold text-slate-50 mb-4">
-              Real Results from Early Adopters
-            </h2>
-            <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
-              "Cut audit prep by 80% and reduced false-positive churn by 60%."
-            </p>
-            <Link
-              to="/customers"
-              className="inline-flex items-center px-6 py-3 bg-teal-500 text-slate-950 rounded-lg font-semibold hover:bg-teal-400 transition-colors"
-            >
-              Read Case Studies →
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="bg-slate-950 py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

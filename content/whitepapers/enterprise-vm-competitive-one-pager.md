@@ -44,53 +44,49 @@
 
 ---
 
-## Competitive Landscape: Funding Analysis
+## Competitive Landscape: ASPM Platform Funding Analysis
 
-**Total Private Funding Raised: $3.13B across 8 private companies**
+**Total ASPM Funding Raised: $351M across 4 ASPM platforms**
 
 | Vendor | Category | Total Funding | Latest Round | Year | Status |
 |--------|----------|---------------|--------------|------|--------|
-| **Wiz** | CNAPP/CTEM | **$1.9B** | Series E $1B | 2024 | Private ($12B valuation) |
-| **Snyk** | Dev-centric AppSec | **$1.32B** | Series G $196.5M | 2022 | Private ($7.4B valuation) |
-| **Orca Security** | CNAPP/CTEM | **$640M** | Series C ext $550M | 2023 | Private ($1.8B valuation) |
 | **Apiiro** | ASPM | **$135M** | Series B $100M | 2022 | Private |
 | **Cycode** | ASPM | **$81M** | Series B $56M | 2021 | Private |
-| **Vulcan Cyber** | Remediation | **$70M** | Series B $55M | 2023 | Acquired by Tenable ($150M) |
+| **Vulcan Cyber** | ASPM + Remediation | **$70M** | Series B $55M | 2023 | Acquired by Tenable ($150M) |
 | **ArmorCode** | ASPM | **$65M** | Series B $40M | 2023 | Private |
-| **Aikido Security** | SMB All-in-one | **$24.5M** | Series A $17M | 2024 | Private |
-| **GitHub Advanced Security** | Dev-centric | Inside Microsoft | N/A | N/A | Public (Microsoft) |
-| **Tenable** | Classic VM | Public | N/A | N/A | Public (NASDAQ: TENB) |
-| **Qualys** | Classic VM | Public | N/A | N/A | Public (NASDAQ: QLYS) |
-| **FixOps** | Context Fusion + Evidence | **Pre-seed** | N/A | N/A | Private |
+| **FixOps** | ASPM + Evidence | **Pre-seed** | N/A | N/A | Private |
 
 **Key Insights**:
-- **Mega-funded unicorns**: Wiz ($12B valuation) and Snyk ($7.4B valuation) dominate with $3.2B combined funding
-- **CNAPP/CTEM category**: Heavily funded (Wiz $1.9B, Orca $640M) focusing on cloud-native runtime protection
-- **ASPM category**: Moderate funding (Apiiro $135M, Cycode $81M, ArmorCode $65M) focusing on application security posture
-- **SMB-focused**: Lower funding (Aikido $24.5M) targeting developer-friendly, lightweight security
-- **Consolidation trend**: Vulcan Cyber acquired by Tenable for $150M (Jan 2025) signals market consolidation
-- **FixOps positioning**: Pre-seed, competing against well-funded players with differentiated approach
+- **ASPM category**: Moderate funding ($351M total) focusing on application security posture management with risk scoring and noise reduction
+- **Market leader**: Apiiro leads with $135M funding, focusing on deep code-to-cloud analysis with behavioral AI
+- **Consolidation trend**: Vulcan Cyber acquired by Tenable for $150M (Jan 2025) signals market consolidation in remediation-focused ASPM
+- **FixOps positioning**: Pre-seed, competing against well-funded ASPM platforms with differentiated approach (instant-on context fusion + automated evidence bundles)
+- **Scanner tools** (Snyk, Wiz, Tenable, Orca, GHAS, Qualys): Not competitors—these are scanner/CNAPP tools that **integrate with** FixOps and ASPM platforms
 
 ---
 
-## Comprehensive Feature Comparison Matrix
+## ASPM Platform Feature Comparison Matrix
 
-**FixOps-Anchored Feature Analysis Across 12 Competitors**
+**FixOps vs. 4 ASPM Competitors with Risk Scoring & Noise Reduction**
 
-| Feature | FixOps | Wiz | Snyk | Orca | Apiiro | Cycode | ArmorCode | Vulcan | Aikido | GHAS | Tenable | Qualys |
-|---------|--------|-----|------|------|--------|--------|-----------|--------|--------|------|---------|--------|
-| **Context Fusion** | ✅ 30-min SBOM+CVE+KEV+EPSS | ⚠️ Cloud-centric | ⚠️ Dev-centric | ⚠️ Cloud-centric | ✅ Deep code-to-cloud | ⚠️ Code-centric | ⚠️ Aggregation | ❌ Remediation-only | ⚠️ Basic | ⚠️ Code-only | ❌ Scanner-only | ❌ Scanner-only |
-| **Evidence Bundles** | ✅ SLSA provenance + 7yr retention | ❌ No | ❌ No | ❌ No | ⚠️ Limited | ❌ No | ❌ No | ❌ No | ❌ No | ❌ No | ❌ No | ❌ No |
-| **Adaptive Gates** | ✅ Auto-tune per repo maturity | ❌ No | ⚠️ Basic | ❌ No | ✅ Policy-as-code | ⚠️ Basic | ❌ No | ❌ No | ⚠️ Basic | ⚠️ Basic | ❌ No | ❌ No |
-| **Explainability** | ✅ Step-by-step + scores | ⚠️ Risk graph | ⚠️ Priority score | ⚠️ Risk score | ⚠️ Risk score | ⚠️ Risk score | ⚠️ Risk score | ⚠️ Priority | ✅ Clear | ⚠️ Alerts | ❌ CVSS only | ❌ CVSS only |
-| **Onboarding Speed** | ✅ 30 minutes | ⚠️ Days | ⚠️ Days | ⚠️ Days | ❌ Weeks | ⚠️ Days | ⚠️ Days | ⚠️ Days | ✅ Fast | ✅ Fast | ⚠️ Days | ⚠️ Days |
-| **Deployment Options** | ✅ Demo + Prod + On-prem | ☁️ SaaS | ☁️ SaaS | ☁️ SaaS | ☁️ SaaS + Private | ☁️ SaaS | ☁️ SaaS | ☁️ SaaS | ☁️ SaaS | ☁️ SaaS | ✅ On-prem | ✅ On-prem |
-| **Data Residency** | ✅ Full control | ⚠️ Limited | ⚠️ Limited | ⚠️ Limited | ⚠️ Limited | ⚠️ Limited | ⚠️ Limited | ⚠️ Limited | ✅ EU option | ⚠️ Limited | ✅ On-prem | ✅ On-prem |
-| **Workflow Automation** | ✅ Jira + Boards + Evidence | ✅ Strong | ✅ Strong | ✅ Strong | ✅ Strong | ✅ Strong | ✅ Strong | ✅ Strong | ⚠️ Basic | ✅ Strong | ⚠️ Basic | ⚠️ Basic |
-| **AI/Probabilistic Models** | ✅ Bayesian + Markov | ⚠️ ML risk | ⚠️ ML priority | ⚠️ ML risk | ✅ Behavioral AI | ⚠️ ML | ⚠️ ML | ⚠️ ML | ❌ No | ❌ No | ❌ No | ❌ No |
-| **Compliance Reporting** | ✅ SOC2 + ISO + APRA + E8 | ⚠️ Cloud compliance | ⚠️ Limited | ⚠️ Cloud compliance | ✅ Strong | ⚠️ Limited | ✅ Strong | ⚠️ Limited | ⚠️ Limited | ⚠️ Limited | ✅ Strong | ✅ Strong |
+| Feature | FixOps | Apiiro | ArmorCode | Cycode | Vulcan Cyber |
+|---------|--------|--------|-----------|--------|--------------|
+| **Context Fusion** | ✅ 30-min SBOM+CVE+KEV+EPSS | ✅ Deep code-to-cloud | ⚠️ Multi-scanner aggregation | ⚠️ Code-centric | ⚠️ Remediation-focused |
+| **Evidence Bundles** | ✅ SLSA provenance + 7yr retention | ⚠️ Internal logs only | ⚠️ Compliance reports | ❌ No | ❌ No |
+| **Adaptive Gates** | ✅ Auto-tune per repo maturity | ✅ Policy-as-code | ❌ No | ⚠️ Basic gates | ❌ No |
+| **Explainability** | ✅ Step-by-step + scores | ⚠️ Risk score (black box AI) | ⚠️ Risk score only | ⚠️ Risk score only | ⚠️ Priority score |
+| **Onboarding Speed** | ✅ 30 minutes | ❌ Weeks (connector setup) | ⚠️ Days (integration) | ⚠️ Days (integration) | ⚠️ Days (integration) |
+| **Deployment Options** | ✅ Demo + Prod + On-prem | ☁️ SaaS + Private cloud | ☁️ SaaS | ☁️ SaaS | ☁️ SaaS |
+| **Data Residency** | ✅ Full control (on-prem) | ⚠️ Limited (private cloud) | ⚠️ Limited | ⚠️ Limited | ⚠️ Limited |
+| **Workflow Automation** | ✅ Jira + Boards + Evidence | ✅ Strong | ✅ Strong | ✅ Strong | ✅ Strong (remediation) |
+| **AI/Probabilistic Models** | ✅ Bayesian + Markov | ✅ Behavioral AI (opaque) | ⚠️ ML-based | ⚠️ ML-based | ⚠️ ML-based |
+| **Compliance Reporting** | ✅ SOC2 + ISO + APRA + E8 | ✅ Strong | ✅ Strong | ⚠️ Limited | ⚠️ Limited |
+| **Risk Scoring** | ✅ EPSS + KEV + Context | ✅ Behavioral risk | ✅ Multi-scanner correlation | ✅ Risk-based prioritization | ✅ Cyber risk scoring |
+| **Noise Reduction** | ✅ 60% target (context fusion) | ✅ AI-driven deduplication | ✅ Correlation engine | ✅ Prioritization | ✅ Remediation focus |
 
 **Legend**: ✅ Strong/Native | ⚠️ Partial/Limited | ❌ Not Available | ☁️ SaaS-only
+
+**Note**: Scanner tools (Snyk, Wiz, Tenable, Orca, GHAS, Qualys, SonarQube, Trivy, Grype) are **not competitors**—they are security scanning tools that **integrate with** FixOps and ASPM platforms. FixOps ingests SBOM/SARIF outputs from any scanner.
 
 ---
 
@@ -119,48 +115,57 @@
 
 ---
 
-## Where FixOps Stands: Unique Positioning
+## Where FixOps Stands: Unique Positioning vs. ASPM Platforms
 
-**Gap Statement**: FixOps occupies the gap between lightweight triage tools (Aikido, GHAS) and heavyweight governance platforms (Apiiro, Wiz, Orca) by delivering **instant-on contextual risk re-scoring with automated evidence bundles**, enabling teams to prove risk reduction without months of tuning or massive budgets.
+**Gap Statement**: FixOps occupies the gap between ASPM platforms (Apiiro, ArmorCode, Cycode, Vulcan Cyber) by delivering **instant-on contextual risk re-scoring with automated evidence bundles**, enabling teams to prove risk reduction without weeks of tuning or complex integrations.
 
-**Key Differentiators vs. Mega-Funded Competitors**:
+**Key Differentiators vs. ASPM Competitors**:
 
-1. **30-Minute Onboarding vs. Weeks/Months**
-   - FixOps: Context Fusion correlates scanner data with asset criticality in 30 minutes
-   - Wiz/Orca: Cloud-centric, requires cloud connector setup (days)
+1. **30-Minute Onboarding vs. Weeks**
+   - FixOps: Context Fusion correlates scanner data with asset criticality in 30 minutes (push-based, any SBOM/SARIF tool)
    - Apiiro: Deep code-to-cloud graph requires weeks of tuning and solutions architects
-   - Snyk: Dev-centric, limited context beyond code dependencies
+   - ArmorCode: Days for multi-scanner integration setup
+   - Cycode: Days for platform integration
+   - Vulcan Cyber: Days for remediation workflow setup
 
 2. **Evidence-as-Code vs. No Evidence Automation**
    - FixOps: Auto-builds audit-ready bundles with SLSA provenance, 7-year retention, cryptographic signing
-   - Competitors: None offer systematic evidence automation (manual screenshots, internal logs only)
-   - Tenable/Qualys: Traditional VM, no evidence bundles
-   - Aikido: Limited compliance workflows
+   - Apiiro: Internal logs only, no cryptographic signing
+   - ArmorCode: Compliance reports but no SLSA provenance
+   - Cycode: No evidence automation
+   - Vulcan Cyber: Remediation tracking only
 
-3. **Adaptive Guardrails vs. One-Size-Fits-All**
+3. **Adaptive Guardrails vs. Rigid Policies**
    - FixOps: Policy overlay auto-tunes CI gates based on repo maturity and historical data
    - Apiiro: Powerful but rigid policy-as-code (high adoption friction)
-   - Snyk/GHAS: Basic gates, no adaptive tuning
-   - Wiz/Orca: Cloud-focused, limited CI/CD integration
+   - ArmorCode: No adaptive gates
+   - Cycode: Basic gates, no adaptive tuning
+   - Vulcan Cyber: No CI/CD gates (remediation-focused)
 
-4. **Probabilistic Risk Models vs. Static Scoring**
-   - FixOps: Bayesian analytics + Markov forecasting for forward-looking risk assessments (8% precision improvement target)
+4. **Probabilistic Risk Models vs. Opaque AI**
+   - FixOps: Bayesian analytics + Markov forecasting with explainable step-by-step scoring (8% precision improvement target)
    - Apiiro: Behavioral AI but opaque (black box)
-   - Wiz/Orca/Snyk: ML-based priority scoring but not probabilistic
-   - Tenable/Qualys: CVSS-only, no ML
+   - ArmorCode: ML-based correlation but limited explainability
+   - Cycode: ML-based prioritization but risk score only
+   - Vulcan Cyber: ML-based priority but limited transparency
 
 5. **Deployment Flexibility vs. SaaS-Only**
    - FixOps: Demo (SaaS) + Enterprise (private data plane) + On-prem options
-   - Most competitors: SaaS-only (data residency challenges for regulated industries)
-   - Tenable/Qualys: On-prem but legacy architecture
+   - Apiiro: SaaS + Private cloud (limited on-prem)
+   - ArmorCode: SaaS-only (data residency challenges)
+   - Cycode: SaaS-only
+   - Vulcan Cyber: SaaS-only
 
-6. **Pre-Seed Efficiency vs. Mega-Funded Complexity**
+6. **Pre-Seed Efficiency vs. Well-Funded Complexity**
    - FixOps: Lean, focused on core differentiation (context fusion + evidence automation)
-   - Wiz ($1.9B): Massive sales/marketing, enterprise-only pricing
-   - Snyk ($1.32B): Broad product portfolio, complex licensing
    - Apiiro ($135M): Heavy implementation, requires dedicated team
+   - ArmorCode ($65M): Complex multi-scanner setup
+   - Cycode ($81M): Platform-centric, integration overhead
+   - Vulcan Cyber ($70M, acquired): Remediation-focused, limited evidence automation
 
-**Market Position**: FixOps targets the **mid-market to enterprise segment** (100-1000 developers) that needs **enterprise-grade evidence automation** without the complexity, cost, and lock-in of mega-funded platforms. Ideal for regulated industries (finance, healthcare, government) requiring on-premises deployment, data residency, and cryptographic audit trails
+**Market Position**: FixOps targets the **mid-market to enterprise segment** (100-1000 developers) that needs **enterprise-grade evidence automation** without the complexity, cost, and lock-in of well-funded ASPM platforms. Ideal for regulated industries (finance, healthcare, government) requiring on-premises deployment, data residency, and cryptographic audit trails.
+
+**Integration Model**: FixOps **integrates with** scanner tools (Snyk, Wiz, Tenable, Orca, GHAS, Qualys, SonarQube, Trivy, Grype) by ingesting their SBOM/SARIF outputs. These scanners are **not competitors**—they are complementary tools that feed data into FixOps for context fusion and evidence automation.
 
 ---
 

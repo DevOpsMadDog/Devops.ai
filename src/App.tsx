@@ -6,7 +6,6 @@ import { Layout } from './components/Layout';
 const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
 const ProductAlDeci = lazy(() => import('./pages/ProductAlDeci').then(module => ({ default: module.ProductAlDeci })));
 const DesignPartners = lazy(() => import('./pages/DesignPartners').then(module => ({ default: module.DesignPartners })));
-const CaseStudies = lazy(() => import('./pages/CaseStudies').then(module => ({ default: module.CaseStudies })));
 const Resources = lazy(() => import('./pages/Resources').then(module => ({ default: module.Resources })));
 const Blog = lazy(() => import('./pages/Blog').then(module => ({ default: module.Blog })));
 const Guides = lazy(() => import('./pages/Guides').then(module => ({ default: module.Guides })));
@@ -40,7 +39,7 @@ function App() {
               <Route path="/product/aldeci" element={<ProductAlDeci />} />
               <Route path="/platform" element={<Navigate to="/product/aldeci#architecture" replace />} />
               <Route path="/partners/design" element={<DesignPartners />} />
-              <Route path="/customers" element={<CaseStudies />} />
+              <Route path="/customers" element={<Navigate to="/partners/design" replace />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/resources/guides" element={<Guides />} />

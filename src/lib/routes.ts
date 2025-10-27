@@ -29,13 +29,6 @@ export const routes: RouteConfig[] = [
     component: 'DesignPartners'
   },
   {
-    path: '/customers',
-    title: 'Case Studies | DevOps.ai',
-    description: 'See how enterprises cut audit prep by 80% and reduced false-positive churn by 60% with AlDeci.',
-    ogImage: '/images/og-customers.png',
-    component: 'CaseStudies'
-  },
-  {
     path: '/resources',
     title: 'Resources | DevOps.ai',
     description: 'Explore our blog, guides, and whitepapers on DevSecOps automation, evidence-as-code, and compliance.',
@@ -106,7 +99,6 @@ export const routes: RouteConfig[] = [
 
 export const navItems = [
   { label: 'Product', path: '/product/aldeci' },
-  { label: 'Customers', path: '/customers' },
   { label: 'Resources', path: '/resources' },
   { label: 'About', path: '/about' },
   { label: 'Contact', path: '/contact' }
