@@ -8,7 +8,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-VERSION="v20251030"
+VERSION="v20251031"
 
 CONTENT_DIR="/home/ubuntu/devops-ai-website/content"
 WHITEPAPERS_DIR="$CONTENT_DIR/whitepapers"

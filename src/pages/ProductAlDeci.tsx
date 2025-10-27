@@ -218,7 +218,7 @@ export function ProductAlDeci() {
               Request Access
             </Link>
             <a
-              href="/pdfs/aldeci-one-pager-v20251030.pdf"
+              href="/pdfs/aldeci-one-pager-v20251031.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"
@@ -1044,7 +1044,7 @@ export function ProductAlDeci() {
             AlDeci occupies the gap between lightweight triage tools and heavyweight governance platforms by delivering instant-on contextual risk re-scoring with automated evidence bundles.
           </p>
           <a
-            href="/pdfs/enterprise-vm-competitive-one-pager-v20251030.pdf"
+            href="/pdfs/enterprise-vm-competitive-one-pager-v20251031.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700"
@@ -1072,7 +1072,7 @@ export function ProductAlDeci() {
               Request Access
             </Link>
             <a
-              href="/pdfs/aldeci-one-pager-v20251030.pdf"
+              href="/pdfs/aldeci-one-pager-v20251031.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold text-lg hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"
