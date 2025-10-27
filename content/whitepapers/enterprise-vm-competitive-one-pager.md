@@ -90,6 +90,75 @@
 
 ---
 
+## Platform Architecture Comparison: Core Capabilities
+
+**How FixOps' platform architecture compares to ASPM competitors across 10 core capabilities**
+
+| Platform Feature | FixOps | Apiiro | ArmorCode | Cycode | Vulcan Cyber |
+|------------------|--------|--------|-----------|--------|--------------|
+| **Ingestion Model** | Push-based (any SBOM/SARIF tool) | Pull-based connectors | Scanner integrations | Platform integrations | Scanner integrations |
+| **Normalizer** | ✅ CycloneDX, SPDX, SARIF, VEX, CNAPP | ⚠️ Proprietary format | ✅ Multi-scanner normalization | ⚠️ Limited formats | ⚠️ Scanner-specific |
+| **LLM Functions** | ✅ RAG-backed LLM with vector DB | ✅ Behavioral AI (opaque) | ⚠️ ML-based correlation | ⚠️ ML-based prioritization | ⚠️ ML-based priority |
+| **Bayesian Analytics** | ✅ Posterior probability with EPSS priors | ❌ No | ❌ No | ❌ No | ❌ No |
+| **Markov Chain Forecasting** | ✅ 5-state model (76% accuracy) | ❌ No | ❌ No | ❌ No | ❌ No |
+| **MITRE ATT&CK Checks** | ✅ Configurable threat intel feeds | ✅ Live threat feeds | ⚠️ Limited | ⚠️ Limited | ⚠️ Limited |
+| **Evidence Packs** | ✅ SLSA provenance + 7yr retention | ⚠️ Internal logs only | ⚠️ Compliance reports | ❌ No | ❌ No |
+| **Local/Air-Gapped Deployment** | ✅ Full on-prem + air-gapped support | ⚠️ Private cloud (limited) | ❌ SaaS only | ❌ SaaS only | ❌ SaaS only |
+| **Customization** | ✅ Overlay config + OPA/Rego policies | ✅ Policy-as-code (rigid) | ⚠️ Limited customization | ⚠️ Basic configuration | ⚠️ Remediation workflows |
+| **Data Sovereignty** | ✅ Full control (on-prem/air-gapped) | ⚠️ Private cloud regions | ⚠️ SaaS regions | ⚠️ SaaS regions | ⚠️ SaaS regions |
+
+### Platform Architecture Differentiators
+
+**1. Push-Based Ingestion**
+- **FixOps**: Teams push SBOM/SARIF artifacts from any tool via REST API or CLI. No complex connectors required.
+- **Why it matters**: 30-minute onboarding vs. weeks for pull-based platforms requiring connector setup and tuning.
+
+**2. Multi-Format Normalizer**
+- **FixOps**: Parses CycloneDX, SPDX, SARIF, VEX, and CNAPP formats into canonical schema for unified analysis.
+- **Why it matters**: Works with any scanner tool without vendor lock-in or proprietary formats.
+
+**3. LLM Functions**
+- **FixOps**: RAG-backed LLM with vector database for pattern matching (94% match threshold) and reasoning with explainable outputs.
+- **Why it matters**: Transparent AI decisions vs. black-box behavioral AI in competitors.
+
+**4. Bayesian Analytics**
+- **FixOps**: Applies Bayesian posterior probability using EPSS-informed priors to project exploit likelihood.
+- **Why it matters**: 8% precision improvement over static CVSS scoring; forward-looking risk assessment.
+
+**5. Markov Chain Forecasting**
+- **FixOps**: 5-state Markov model (Open, Triaged, In Remediation, Remediated, Reopened) forecasts vulnerability trends.
+- **Why it matters**: 76% state prediction accuracy enables resource planning and remediation timeline forecasting.
+
+**6. MITRE ATT&CK Checks**
+- **FixOps**: Integrates configurable threat intelligence feeds including MITRE ATT&CK, CISA KEV, and custom threat intel.
+- **Why it matters**: Map vulnerabilities to attack techniques and prioritize based on threat landscape.
+
+**7. Evidence Packs**
+- **FixOps**: Auto-generates cryptographically signed evidence bundles with SLSA v1 provenance attestations and 7-year retention.
+- **Why it matters**: Automated compliance evidence vs. manual screenshot collection and internal logs.
+
+**8. Local/Air-Gapped Deployment**
+- **FixOps**: Full on-premises and air-gapped deployment support with no internet connectivity required.
+- **Why it matters**: Data sovereignty and compliance for finance, healthcare, defense sectors.
+
+**9. Overlay Customization**
+- **FixOps**: Overlay configuration toggles modules (context_engine, guardrails, compliance, ai_agents) with OPA/Rego policy support.
+- **Why it matters**: Flexible customization without rigid policy-as-code frameworks.
+
+**10. Data Sovereignty**
+- **FixOps**: Full control over data location with on-premises and air-gapped deployment options.
+- **Why it matters**: Meet GDPR, APRA CPS 234, and other regulatory requirements for data residency.
+
+### Platform Architecture Metrics
+
+- **30 minutes**: Onboarding time vs. weeks for pull-based platforms
+- **8%**: Precision improvement with Bayesian analytics over static CVSS
+- **76%**: State prediction accuracy with Markov chain forecasting
+- **7 years**: Evidence retention with cryptographic signing for compliance
+- **94%**: Vector DB match threshold for LLM pattern matching
+
+---
+
 ## FixOps vs Apiiro – Detailed Comparison
 
 | Feature | FixOps | Apiiro |

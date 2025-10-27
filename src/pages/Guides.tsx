@@ -11,7 +11,7 @@ export function Guides() {
       pages: '28 pages',
       format: 'PDF',
       topics: ['Risk Scoring', 'EPSS', 'KEV', 'Vulnerability Management'],
-      pdfFile: 'risk-model-deep-dive-v20251032.pdf'
+      pdfFile: 'risk-model-deep-dive-v20251033.pdf'
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ export function Guides() {
       pages: '42 pages',
       format: 'PDF',
       topics: ['APRA CPS 234', 'Compliance', 'Financial Services', 'Australia'],
-      pdfFile: 'apra-cps234-automation-pack-v20251032.pdf'
+      pdfFile: 'apra-cps234-automation-pack-v20251033.pdf'
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ export function Guides() {
       pages: '35 pages',
       format: 'PDF',
       topics: ['Evidence-as-Code', 'CI/CD', 'SLSA', 'Cryptography'],
-      pdfFile: 'evidence-as-code-architecture-guide-v20251032.pdf'
+      pdfFile: 'evidence-as-code-architecture-guide-v20251033.pdf'
     },
     {
       id: 4,
@@ -41,7 +41,7 @@ export function Guides() {
       pages: '24 pages',
       format: 'PDF',
       topics: ['SBOM', 'Supply Chain Security', 'CycloneDX', 'SPDX'],
-      pdfFile: 'sbom-integration-best-practices-v20251032.pdf'
+      pdfFile: 'sbom-integration-best-practices-v20251033.pdf'
     },
     {
       id: 5,
@@ -51,7 +51,7 @@ export function Guides() {
       pages: '31 pages',
       format: 'PDF',
       topics: ['Scanner Integration', 'Deduplication', 'Risk Prioritization'],
-      pdfFile: 'multi-scanner-correlation-strategies-v20251032.pdf'
+      pdfFile: 'multi-scanner-correlation-strategies-v20251033.pdf'
     },
     {
       id: 6,
@@ -61,7 +61,7 @@ export function Guides() {
       pages: '38 pages',
       format: 'PDF',
       topics: ['SOC 2', 'Compliance', 'Audit', 'Evidence Automation'],
-      pdfFile: 'soc2-type-ii-evidence-automation-v20251032.pdf'
+      pdfFile: 'soc2-type-ii-evidence-automation-v20251033.pdf'
     },
     {
       id: 7,
@@ -71,7 +71,7 @@ export function Guides() {
       pages: '2 pages',
       format: 'PDF',
       topics: ['Competitive Analysis', 'Enterprise Examples', 'ROI', 'Market Positioning'],
-      pdfFile: 'enterprise-vm-competitive-one-pager-v20251032.pdf'
+      pdfFile: 'enterprise-vm-competitive-one-pager-v20251033.pdf'
     }
   ];
 

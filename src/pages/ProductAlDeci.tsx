@@ -218,7 +218,7 @@ export function ProductAlDeci() {
               Request Access
             </Link>
             <a
-              href="/pdfs/aldeci-one-pager-v20251032.pdf"
+              href="/pdfs/aldeci-one-pager-v20251033.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"
@@ -589,6 +589,272 @@ export function ProductAlDeci() {
       -F "file=@sarif.json"`}</code>
                   </pre>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Platform Architecture Comparison */}
+      <section className="bg-slate-900 py-20 border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-slate-50 mb-4">
+              Platform Architecture: How AlDeci Compares
+            </h2>
+            <p className="text-lg text-slate-400 max-w-3xl mx-auto">
+              AlDeci's platform architecture includes advanced capabilities that differentiate it from traditional ASPM platforms. Here's how our core platform features compare.
+            </p>
+          </div>
+
+          {/* Platform Features Comparison Matrix */}
+          <div className="overflow-x-auto mb-12">
+            <table className="w-full border-collapse bg-slate-950 rounded-xl overflow-hidden">
+              <thead>
+                <tr className="bg-slate-800">
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-slate-300 border-b border-slate-700">Platform Feature</th>
+                  <th className="px-6 py-4 text-center text-sm font-semibold text-teal-400 border-b border-slate-700">AlDeci</th>
+                  <th className="px-6 py-4 text-center text-sm font-semibold text-slate-300 border-b border-slate-700">Apiiro</th>
+                  <th className="px-6 py-4 text-center text-sm font-semibold text-slate-300 border-b border-slate-700">ArmorCode</th>
+                  <th className="px-6 py-4 text-center text-sm font-semibold text-slate-300 border-b border-slate-700">Cycode</th>
+                  <th className="px-6 py-4 text-center text-sm font-semibold text-slate-300 border-b border-slate-700">Vulcan Cyber</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-slate-800">
+                  <td className="px-6 py-4 text-sm text-slate-300">
+                    <strong>Ingestion Model</strong>
+                    <p className="text-xs text-slate-500 mt-1">How data enters the platform</p>
+                  </td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-400">Push-based (any SBOM/SARIF tool)</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">Pull-based connectors</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">Scanner integrations</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">Platform integrations</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">Scanner integrations</td>
+                </tr>
+                <tr className="border-b border-slate-800">
+                  <td className="px-6 py-4 text-sm text-slate-300">
+                    <strong>Normalizer</strong>
+                    <p className="text-xs text-slate-500 mt-1">Multi-format parsing to canonical schema</p>
+                  </td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-400">✅ CycloneDX, SPDX, SARIF, VEX, CNAPP</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Proprietary format</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">✅ Multi-scanner normalization</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Limited formats</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Scanner-specific</td>
+                </tr>
+                <tr className="border-b border-slate-800">
+                  <td className="px-6 py-4 text-sm text-slate-300">
+                    <strong>LLM Functions</strong>
+                    <p className="text-xs text-slate-500 mt-1">AI-powered pattern matching & reasoning</p>
+                  </td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-400">✅ RAG-backed LLM with vector DB</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">✅ Behavioral AI (opaque)</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ ML-based correlation</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ ML-based prioritization</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ ML-based priority</td>
+                </tr>
+                <tr className="border-b border-slate-800">
+                  <td className="px-6 py-4 text-sm text-slate-300">
+                    <strong>Bayesian Analytics</strong>
+                    <p className="text-xs text-slate-500 mt-1">Probabilistic risk projection</p>
+                  </td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-400">✅ Posterior probability with EPSS priors</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">❌ No</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">❌ No</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">❌ No</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">❌ No</td>
+                </tr>
+                <tr className="border-b border-slate-800">
+                  <td className="px-6 py-4 text-sm text-slate-300">
+                    <strong>Markov Chain Forecasting</strong>
+                    <p className="text-xs text-slate-500 mt-1">Vulnerability trend prediction</p>
+                  </td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-400">✅ 5-state model (76% accuracy)</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">❌ No</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">❌ No</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">❌ No</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">❌ No</td>
+                </tr>
+                <tr className="border-b border-slate-800">
+                  <td className="px-6 py-4 text-sm text-slate-300">
+                    <strong>MITRE ATT&CK Checks</strong>
+                    <p className="text-xs text-slate-500 mt-1">Threat framework mapping</p>
+                  </td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-400">✅ Configurable threat intel feeds</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">✅ Live threat feeds</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Limited</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Limited</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Limited</td>
+                </tr>
+                <tr className="border-b border-slate-800">
+                  <td className="px-6 py-4 text-sm text-slate-300">
+                    <strong>Evidence Packs</strong>
+                    <p className="text-xs text-slate-500 mt-1">Cryptographically signed audit bundles</p>
+                  </td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-400">✅ SLSA provenance + 7yr retention</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Internal logs only</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Compliance reports</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">❌ No</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">❌ No</td>
+                </tr>
+                <tr className="border-b border-slate-800">
+                  <td className="px-6 py-4 text-sm text-slate-300">
+                    <strong>Local/Air-Gapped Deployment</strong>
+                    <p className="text-xs text-slate-500 mt-1">On-premises & disconnected environments</p>
+                  </td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-400">✅ Full on-prem + air-gapped support</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Private cloud (limited)</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">❌ SaaS only</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">❌ SaaS only</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">❌ SaaS only</td>
+                </tr>
+                <tr className="border-b border-slate-800">
+                  <td className="px-6 py-4 text-sm text-slate-300">
+                    <strong>Customization</strong>
+                    <p className="text-xs text-slate-500 mt-1">Policy & threshold configuration</p>
+                  </td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-400">✅ Overlay config + OPA/Rego policies</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">✅ Policy-as-code (rigid)</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Limited customization</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Basic configuration</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Remediation workflows</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 text-sm text-slate-300">
+                    <strong>Data Sovereignty</strong>
+                    <p className="text-xs text-slate-500 mt-1">Control over data location & residency</p>
+                  </td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-400">✅ Full control (on-prem/air-gapped)</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Private cloud regions</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ SaaS regions</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ SaaS regions</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ SaaS regions</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          {/* Feature Explanations */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-teal-400 mb-4">🔄 Push-Based Ingestion</h3>
+              <p className="text-slate-300 mb-3">
+                AlDeci uses a <strong>push-based model</strong> where teams push SBOM/SARIF artifacts from any tool via REST API or CLI. No complex connectors or scanner integrations required.
+              </p>
+              <p className="text-sm text-slate-400">
+                <strong>Why it matters:</strong> 30-minute onboarding vs. weeks for pull-based platforms that require connector setup and tuning.
+              </p>
+            </div>
+
+            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-teal-400 mb-4">🔧 Multi-Format Normalizer</h3>
+              <p className="text-slate-300 mb-3">
+                AlDeci's <strong>normalizer</strong> parses CycloneDX, SPDX, SARIF, VEX, and CNAPP formats into a canonical schema, enabling unified analysis across heterogeneous tools.
+              </p>
+              <p className="text-sm text-slate-400">
+                <strong>Why it matters:</strong> Works with any scanner tool without vendor lock-in or proprietary formats.
+              </p>
+            </div>
+
+            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-teal-400 mb-4">🤖 LLM Functions</h3>
+              <p className="text-slate-300 mb-3">
+                AlDeci uses <strong>RAG-backed LLM</strong> with vector database for pattern matching (94% match threshold) and reasoning with explainable step-by-step outputs.
+              </p>
+              <p className="text-sm text-slate-400">
+                <strong>Why it matters:</strong> Transparent AI decisions vs. black-box behavioral AI in competitors.
+              </p>
+            </div>
+
+            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-teal-400 mb-4">📊 Bayesian Analytics</h3>
+              <p className="text-slate-300 mb-3">
+                AlDeci applies <strong>Bayesian posterior probability</strong> using EPSS-informed priors to project exploit likelihood, achieving 8% precision improvement over static scoring.
+              </p>
+              <p className="text-sm text-slate-400">
+                <strong>Why it matters:</strong> Forward-looking risk assessment vs. backward-looking CVSS scores.
+              </p>
+            </div>
+
+            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-teal-400 mb-4">🔮 Markov Chain Forecasting</h3>
+              <p className="text-slate-300 mb-3">
+                AlDeci uses a <strong>5-state Markov model</strong> (Open, Triaged, In Remediation, Remediated, Reopened) to forecast vulnerability trends with 76% state prediction accuracy.
+              </p>
+              <p className="text-sm text-slate-400">
+                <strong>Why it matters:</strong> Predict remediation timelines and resource needs vs. reactive-only approaches.
+              </p>
+            </div>
+
+            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-teal-400 mb-4">🛡️ MITRE ATT&CK Checks</h3>
+              <p className="text-slate-300 mb-3">
+                AlDeci integrates <strong>configurable threat intelligence feeds</strong> including MITRE ATT&CK, CISA KEV, and custom threat intel to map vulnerabilities to attack techniques.
+              </p>
+              <p className="text-sm text-slate-400">
+                <strong>Why it matters:</strong> Understand attacker tactics and prioritize based on threat landscape.
+              </p>
+            </div>
+
+            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-teal-400 mb-4">📦 Evidence Packs</h3>
+              <p className="text-slate-300 mb-3">
+                AlDeci auto-generates <strong>cryptographically signed evidence bundles</strong> with SLSA v1 provenance attestations, 7-year retention, and tamper-proof audit trails.
+              </p>
+              <p className="text-sm text-slate-400">
+                <strong>Why it matters:</strong> Automated compliance evidence vs. manual screenshot collection and internal logs.
+              </p>
+            </div>
+
+            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-teal-400 mb-4">🔒 Local/Air-Gapped Deployment</h3>
+              <p className="text-slate-300 mb-3">
+                AlDeci supports <strong>full on-premises and air-gapped deployments</strong> with no internet connectivity required, ideal for regulated industries and government.
+              </p>
+              <p className="text-sm text-slate-400">
+                <strong>Why it matters:</strong> Data sovereignty and compliance for finance, healthcare, defense sectors.
+              </p>
+            </div>
+
+            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-teal-400 mb-4">⚙️ Overlay Customization</h3>
+              <p className="text-slate-300 mb-3">
+                AlDeci uses <strong>overlay configuration</strong> to toggle modules (context_engine, guardrails, compliance, ai_agents, etc.) and supports OPA/Rego policies for fine-grained control.
+              </p>
+              <p className="text-sm text-slate-400">
+                <strong>Why it matters:</strong> Flexible customization without rigid policy-as-code frameworks.
+              </p>
+            </div>
+
+            <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-teal-400 mb-4">🌍 Data Sovereignty</h3>
+              <p className="text-slate-300 mb-3">
+                AlDeci provides <strong>full control over data location</strong> with on-premises and air-gapped deployment options, ensuring compliance with data residency requirements.
+              </p>
+              <p className="text-sm text-slate-400">
+                <strong>Why it matters:</strong> Meet GDPR, APRA CPS 234, and other regulatory requirements for data sovereignty.
+              </p>
+            </div>
+          </div>
+
+          {/* Key Differentiators */}
+          <div className="bg-gradient-to-r from-teal-500/10 to-blue-500/10 border border-teal-500/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-slate-50 mb-4 text-center">
+              Why AlDeci's Platform Architecture Stands Out
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div className="text-3xl font-bold text-teal-400 mb-2">30 min</div>
+                <p className="text-slate-300">Onboarding time vs. weeks for pull-based platforms</p>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-teal-400 mb-2">8%</div>
+                <p className="text-slate-300">Precision improvement with Bayesian analytics</p>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-teal-400 mb-2">7 years</div>
+                <p className="text-slate-300">Evidence retention with cryptographic signing</p>
               </div>
             </div>
           </div>
@@ -1123,7 +1389,7 @@ export function ProductAlDeci() {
           {/* Download CTA */}
           <div className="text-center mb-16">
             <a
-              href="/pdfs/enterprise-vm-competitive-one-pager-v20251032.pdf"
+              href="/pdfs/enterprise-vm-competitive-one-pager-v20251033.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700"
@@ -1200,7 +1466,7 @@ export function ProductAlDeci() {
               Request Access
             </Link>
             <a
-              href="/pdfs/aldeci-one-pager-v20251032.pdf"
+              href="/pdfs/aldeci-one-pager-v20251033.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold text-lg hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"
