@@ -85,122 +85,178 @@ function AlDeciArchitectureDiagram() {
 
 function DecisionFlowDiagram() {
   return (
-    <svg viewBox="0 0 800 400" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 1400 500" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
       {/* Background */}
-      <rect width="800" height="400" fill="#0f172a" />
+      <rect width="1400" height="500" fill="#0f172a" />
       
       {/* Title */}
-      <text x="400" y="30" fill="#14b8a6" fontSize="24" fontWeight="bold" textAnchor="middle">
-        Decision & Evidence Flow
+      <text x="700" y="40" fill="#14b8a6" fontSize="28" fontWeight="bold" textAnchor="middle">
+        6-Step Decision Flow
       </text>
       
-      {/* Input */}
-      <rect x="50" y="80" width="150" height="60" fill="#1e293b" stroke="#14b8a6" strokeWidth="2" rx="8" />
-      <text x="125" y="110" fill="#f1f5f9" fontSize="14" fontWeight="bold" textAnchor="middle">
-        Security Artifacts
+      {/* Step 1: Enrichment */}
+      <rect x="50" y="120" width="180" height="100" fill="#1e293b" stroke="#14b8a6" strokeWidth="2" rx="8" />
+      <text x="140" y="145" fill="#14b8a6" fontSize="16" fontWeight="bold" textAnchor="middle">
+        1. Enrichment
       </text>
-      <text x="125" y="130" fill="#94a3b8" fontSize="12" textAnchor="middle">
-        SBOM + SARIF + CVE
+      <text x="140" y="170" fill="#f1f5f9" fontSize="13" textAnchor="middle">
+        EPSS • KEV • CVSS
       </text>
-      
-      {/* Arrow */}
-      <path d="M 200 110 L 280 110" stroke="#14b8a6" strokeWidth="2" markerEnd="url(#arrowhead2)" />
-      
-      {/* Probabilistic Models (feeding into Risk Scoring) */}
-      <rect x="280" y="180" width="150" height="60" fill="#1e293b" stroke="#8b5cf6" strokeWidth="2" rx="8" />
-      <text x="355" y="205" fill="#f1f5f9" fontSize="13" fontWeight="bold" textAnchor="middle">
-        Probabilistic Models
+      <text x="140" y="190" fill="#94a3b8" fontSize="12" textAnchor="middle">
+        CWE • ExploitDB
       </text>
-      <text x="355" y="220" fill="#94a3b8" fontSize="11" textAnchor="middle">
-        Bayesian posterior
-      </text>
-      <text x="355" y="233" fill="#94a3b8" fontSize="11" textAnchor="middle">
-        Markov forecast
+      <text x="140" y="208" fill="#f59e0b" fontSize="10" textAnchor="middle">
+        (ExploitDB: Coming soon)
       </text>
       
-      {/* Arrow from Probabilistic to Risk Scoring */}
-      <path d="M 355 180 L 355 140" stroke="#8b5cf6" strokeWidth="2" markerEnd="url(#arrowhead3)" />
+      {/* Arrow 1→2 */}
+      <path d="M 230 170 L 270 170" stroke="#14b8a6" strokeWidth="2" markerEnd="url(#arrowhead)" />
       
-      {/* Risk Scoring */}
-      <rect x="280" y="80" width="150" height="60" fill="#1e293b" stroke="#3b82f6" strokeWidth="2" rx="8" />
-      <text x="355" y="110" fill="#f1f5f9" fontSize="14" fontWeight="bold" textAnchor="middle">
-        Risk Scoring
+      {/* Step 2: Forecasting */}
+      <rect x="270" y="120" width="180" height="100" fill="#1e293b" stroke="#8b5cf6" strokeWidth="2" rx="8" />
+      <text x="360" y="145" fill="#8b5cf6" fontSize="16" fontWeight="bold" textAnchor="middle">
+        2. Forecasting
       </text>
-      <text x="355" y="130" fill="#94a3b8" fontSize="12" textAnchor="middle">
-        EPSS + KEV + Context
+      <text x="360" y="170" fill="#f1f5f9" fontSize="13" textAnchor="middle">
+        Markov Chain
       </text>
-      
-      {/* Arrow */}
-      <path d="M 430 110 L 510 110" stroke="#14b8a6" strokeWidth="2" markerEnd="url(#arrowhead2)" />
-      
-      {/* Decision Engine */}
-      <rect x="510" y="80" width="150" height="60" fill="#1e293b" stroke="#3b82f6" strokeWidth="2" rx="8" />
-      <text x="585" y="110" fill="#f1f5f9" fontSize="14" fontWeight="bold" textAnchor="middle">
-        Decision Engine
-      </text>
-      <text x="585" y="130" fill="#94a3b8" fontSize="12" textAnchor="middle">
-        Multi-LLM + OPA
+      <text x="360" y="190" fill="#94a3b8" fontSize="12" textAnchor="middle">
+        Bayesian Analytics
       </text>
       
-      {/* Arrow down */}
-      <path d="M 585 140 L 585 200" stroke="#14b8a6" strokeWidth="2" markerEnd="url(#arrowhead2)" />
+      {/* Arrow 2→3 */}
+      <path d="M 450 170 L 490 170" stroke="#14b8a6" strokeWidth="2" markerEnd="url(#arrowhead)" />
       
-      {/* Verdict */}
-      <rect x="510" y="200" width="150" height="60" fill="#1e293b" stroke="#14b8a6" strokeWidth="2" rx="8" />
-      <text x="585" y="225" fill="#f1f5f9" fontSize="14" fontWeight="bold" textAnchor="middle">
-        Verdict
+      {/* Step 3: Threat Modeling */}
+      <rect x="490" y="120" width="180" height="100" fill="#1e293b" stroke="#f59e0b" strokeWidth="2" rx="8" />
+      <text x="580" y="145" fill="#f59e0b" fontSize="16" fontWeight="bold" textAnchor="middle">
+        3. Threat Modeling
       </text>
-      <text x="585" y="245" fill="#94a3b8" fontSize="12" textAnchor="middle">
-        ALLOW / FIX / BLOCK
+      <text x="580" y="170" fill="#f1f5f9" fontSize="13" textAnchor="middle">
+        CVE → Architecture
       </text>
-      
-      {/* MITRE ATT&CK (output from Decision Engine) */}
-      <rect x="680" y="200" width="110" height="50" fill="#1e293b" stroke="#f59e0b" strokeWidth="2" rx="8" />
-      <text x="735" y="220" fill="#f1f5f9" fontSize="12" fontWeight="bold" textAnchor="middle">
-        MITRE ATT&CK
+      <text x="580" y="190" fill="#94a3b8" fontSize="12" textAnchor="middle">
+        Threat Tree Match
       </text>
-      <text x="735" y="237" fill="#94a3b8" fontSize="10" textAnchor="middle">
-        T1190, T1059...
+      <text x="580" y="208" fill="#f59e0b" fontSize="10" textAnchor="middle">
+        (Threat Tree: Beta)
       </text>
       
-      {/* Arrow from Decision Engine to MITRE */}
-      <path d="M 660 110 L 735 110 L 735 200" stroke="#f59e0b" strokeWidth="2" markerEnd="url(#arrowhead4)" />
+      {/* Arrow 3→4 */}
+      <path d="M 670 170 L 710 170" stroke="#14b8a6" strokeWidth="2" markerEnd="url(#arrowhead)" />
       
-      {/* Arrow from Verdict down */}
-      <path d="M 585 260 L 585 320" stroke="#14b8a6" strokeWidth="2" markerEnd="url(#arrowhead2)" />
-      
-      {/* Arrow from MITRE to Evidence */}
-      <path d="M 735 250 L 735 350 L 660 350" stroke="#f59e0b" strokeWidth="2" markerEnd="url(#arrowhead4)" />
-      
-      {/* Evidence Bundle */}
-      <rect x="510" y="320" width="150" height="60" fill="#14b8a6" stroke="#0d9488" strokeWidth="2" rx="8" />
-      <text x="585" y="345" fill="#0f172a" fontSize="14" fontWeight="bold" textAnchor="middle">
-        Evidence Bundle
+      {/* Step 4: Compliance Mapping */}
+      <rect x="710" y="120" width="180" height="100" fill="#1e293b" stroke="#3b82f6" strokeWidth="2" rx="8" />
+      <text x="800" y="145" fill="#3b82f6" fontSize="16" fontWeight="bold" textAnchor="middle">
+        4. Compliance
       </text>
-      <text x="585" y="365" fill="#0f172a" fontSize="12" textAnchor="middle">
-        Signed + Encrypted
+      <text x="800" y="170" fill="#f1f5f9" fontSize="13" textAnchor="middle">
+        Org-specific Controls
       </text>
-      
-      {/* Compliance Path */}
-      <path d="M 510 350 L 280 350 L 280 300" stroke="#3b82f6" strokeWidth="2" markerEnd="url(#arrowhead2)" />
-      <rect x="205" y="270" width="150" height="60" fill="#1e293b" stroke="#3b82f6" strokeWidth="2" rx="8" />
-      <text x="280" y="295" fill="#f1f5f9" fontSize="14" fontWeight="bold" textAnchor="middle">
-        Compliance Check
-      </text>
-      <text x="280" y="315" fill="#94a3b8" fontSize="12" textAnchor="middle">
+      <text x="800" y="190" fill="#94a3b8" fontSize="12" textAnchor="middle">
         SOC2 • ISO • CPS234
       </text>
       
-      {/* Arrow marker definitions */}
+      {/* Arrow 4→5 */}
+      <path d="M 890 170 L 930 170" stroke="#14b8a6" strokeWidth="2" markerEnd="url(#arrowhead)" />
+      
+      {/* Step 5: LLM Explanation */}
+      <rect x="930" y="120" width="180" height="100" fill="#1e293b" stroke="#10b981" strokeWidth="2" rx="8" />
+      <text x="1020" y="145" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">
+        5. LLM Explanation
+      </text>
+      <text x="1020" y="170" fill="#f1f5f9" fontSize="13" textAnchor="middle">
+        Natural Language
+      </text>
+      <text x="1020" y="190" fill="#94a3b8" fontSize="12" textAnchor="middle">
+        Math-backed + Guard
+      </text>
+      
+      {/* Arrow 5→6 */}
+      <path d="M 1110 170 L 1150 170" stroke="#14b8a6" strokeWidth="2" markerEnd="url(#arrowhead)" />
+      
+      {/* Step 6: Final Verdict */}
+      <rect x="1150" y="120" width="180" height="100" fill="#14b8a6" stroke="#0d9488" strokeWidth="2" rx="8" />
+      <text x="1240" y="145" fill="#0f172a" fontSize="16" fontWeight="bold" textAnchor="middle">
+        6. Final Verdict
+      </text>
+      <text x="1240" y="170" fill="#0f172a" fontSize="13" textAnchor="middle">
+        Exploitable
+      </text>
+      <text x="1240" y="190" fill="#0f172a" fontSize="12" textAnchor="middle">
+        Not Exploitable
+      </text>
+      <text x="1240" y="208" fill="#0f172a" fontSize="12" textAnchor="middle">
+        Needs Review
+      </text>
+      
+      {/* MITRE Dual Role Legend */}
+      <rect x="50" y="280" width="650" height="180" fill="#1e293b" stroke="#f59e0b" strokeWidth="1" rx="8" opacity="0.9" />
+      <text x="375" y="310" fill="#f59e0b" fontSize="16" fontWeight="bold" textAnchor="middle">
+        MITRE ATT&CK: Dual Role
+      </text>
+      
+      {/* Design-time baseline */}
+      <rect x="70" y="330" width="290" height="110" fill="#0f172a" stroke="#f59e0b" strokeWidth="1" rx="6" />
+      <text x="215" y="355" fill="#f59e0b" fontSize="14" fontWeight="bold" textAnchor="middle">
+        Design-Time Baseline
+      </text>
+      <text x="215" y="378" fill="#f1f5f9" fontSize="11" textAnchor="middle">
+        Architecture → Threat Model
+      </text>
+      <text x="215" y="396" fill="#94a3b8" fontSize="10" textAnchor="middle">
+        Defines applicable techniques per
+      </text>
+      <text x="215" y="412" fill="#94a3b8" fontSize="10" textAnchor="middle">
+        component; feeds Step 3 & 4 policies
+      </text>
+      <text x="215" y="430" fill="#f59e0b" fontSize="9" textAnchor="middle">
+        (Beta)
+      </text>
+      
+      {/* Runtime evidence */}
+      <rect x="380" y="330" width="290" height="110" fill="#0f172a" stroke="#f59e0b" strokeWidth="1" rx="6" />
+      <text x="525" y="355" fill="#f59e0b" fontSize="14" fontWeight="bold" textAnchor="middle">
+        Runtime Evidence
+      </text>
+      <text x="525" y="378" fill="#f1f5f9" fontSize="11" textAnchor="middle">
+        LLM identifies techniques
+      </text>
+      <text x="525" y="396" fill="#94a3b8" fontSize="10" textAnchor="middle">
+        Included in evidence bundles for
+      </text>
+      <text x="525" y="412" fill="#94a3b8" fontSize="10" textAnchor="middle">
+        threat context & audit transparency
+      </text>
+      <text x="525" y="430" fill="#10b981" fontSize="9" textAnchor="middle">
+        (Available)
+      </text>
+      
+      {/* Feature Status Legend */}
+      <rect x="750" y="280" width="600" height="180" fill="#1e293b" stroke="#94a3b8" strokeWidth="1" rx="8" opacity="0.9" />
+      <text x="1050" y="310" fill="#94a3b8" fontSize="16" fontWeight="bold" textAnchor="middle">
+        Feature Status
+      </text>
+      
+      <circle cx="780" cy="345" r="6" fill="#10b981" />
+      <text x="800" y="350" fill="#f1f5f9" fontSize="12">
+        Available: EPSS, KEV, CVSS, CWE, Bayesian, Markov, Compliance, LLM
+      </text>
+      
+      <circle cx="780" cy="380" r="6" fill="#f59e0b" />
+      <text x="800" y="385" fill="#f1f5f9" fontSize="12">
+        Beta: Threat tree matching, Design-time MITRE baseline
+      </text>
+      
+      <circle cx="780" cy="415" r="6" fill="#94a3b8" />
+      <text x="800" y="420" fill="#f1f5f9" fontSize="12">
+        Coming soon: ExploitDB presence & PoC detection
+      </text>
+      
+      {/* Arrow marker definition */}
       <defs>
-        <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
           <polygon points="0 0, 10 3, 0 6" fill="#14b8a6" />
-        </marker>
-        <marker id="arrowhead3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-          <polygon points="0 0, 10 3, 0 6" fill="#8b5cf6" />
-        </marker>
-        <marker id="arrowhead4" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-          <polygon points="0 0, 10 3, 0 6" fill="#f59e0b" />
         </marker>
       </defs>
     </svg>
@@ -254,7 +310,7 @@ export function ProductAlDeci() {
               Request Access
             </Link>
             <a
-              href="/pdfs/aldeci-one-pager-v20251036.pdf"
+              href="/pdfs/aldeci-one-pager-v20251037.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"
@@ -426,6 +482,54 @@ export function ProductAlDeci() {
             <h3 className="text-2xl font-semibold text-teal-400 mb-6 text-center">Decision & Evidence Flow</h3>
             <div className="bg-slate-950 border border-slate-800 rounded-xl p-8">
               <DecisionFlowDiagram />
+            </div>
+            
+            {/* Step → What we use → Output artifact table */}
+            <div className="bg-slate-900 border border-slate-800 rounded-lg p-6 mt-8">
+              <h4 className="text-xl font-semibold text-slate-50 mb-4">6-Step Flow Summary</h4>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-slate-700">
+                      <th className="text-left py-3 px-4 text-teal-400 font-semibold">Step</th>
+                      <th className="text-left py-3 px-4 text-teal-400 font-semibold">What We Use</th>
+                      <th className="text-left py-3 px-4 text-teal-400 font-semibold">Output Artifact</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-slate-300">
+                    <tr className="border-b border-slate-800">
+                      <td className="py-3 px-4 font-semibold">1. Enrichment</td>
+                      <td className="py-3 px-4">EPSS, KEV, CVSS, CWE, ExploitDB</td>
+                      <td className="py-3 px-4">Enriched CVE metadata with exploit signals</td>
+                    </tr>
+                    <tr className="border-b border-slate-800">
+                      <td className="py-3 px-4 font-semibold">2. Forecasting</td>
+                      <td className="py-3 px-4">Markov chain, Bayesian analytics</td>
+                      <td className="py-3 px-4">Risk projection + trend forecast (5-state model)</td>
+                    </tr>
+                    <tr className="border-b border-slate-800">
+                      <td className="py-3 px-4 font-semibold">3. Threat Modeling</td>
+                      <td className="py-3 px-4">Architecture baseline, threat tree, MITRE techniques</td>
+                      <td className="py-3 px-4">Exploitability assessment per component</td>
+                    </tr>
+                    <tr className="border-b border-slate-800">
+                      <td className="py-3 px-4 font-semibold">4. Compliance Mapping</td>
+                      <td className="py-3 px-4">Org-specific controls, SOC2, ISO, CPS234</td>
+                      <td className="py-3 px-4">Control coverage report + policy violations</td>
+                    </tr>
+                    <tr className="border-b border-slate-800">
+                      <td className="py-3 px-4 font-semibold">5. LLM Explanation</td>
+                      <td className="py-3 px-4">Multi-LLM consensus, RAG, hallucination guard</td>
+                      <td className="py-3 px-4">Natural language explanation + confidence score</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4 font-semibold">6. Final Verdict</td>
+                      <td className="py-3 px-4">All prior steps + policy overlay</td>
+                      <td className="py-3 px-4">Exploitable / Not Exploitable / Needs Review</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
 
@@ -718,13 +822,41 @@ export function ProductAlDeci() {
                     <p className="text-xs text-slate-500 mt-1">Adversary tactics & techniques identification</p>
                   </td>
                   <td className="px-6 py-4 text-center text-sm text-slate-400">
-                    <div className="font-semibold text-teal-400 mb-1">✅ LLM-powered technique mapping</div>
-                    <p className="text-xs text-slate-500">GPT-5 maps CVEs to MITRE techniques (T1190, T1059, T1078, T1003) with tactic context for threat-informed prioritization</p>
+                    <div className="font-semibold text-teal-400 mb-1">✅ Dual role: Design-time baseline + Runtime evidence</div>
+                    <p className="text-xs text-slate-500">Design-time: Architecture → threat baseline (Beta). Runtime: LLM maps CVEs to techniques for evidence bundles</p>
                   </td>
                   <td className="px-6 py-4 text-center text-sm text-slate-500">✅ Live threat feeds</td>
                   <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Limited</td>
                   <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Limited</td>
                   <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Limited</td>
+                </tr>
+                <tr className="border-b border-slate-800">
+                  <td className="px-6 py-4 text-sm text-slate-300">
+                    <strong>Design-Time Threat Modeling</strong>
+                    <p className="text-xs text-slate-500 mt-1">Architecture baseline for exploitability assessment</p>
+                  </td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-400">
+                    <div className="font-semibold text-teal-400 mb-1">✅ Component-level technique mapping (Beta)</div>
+                    <p className="text-xs text-slate-500">Teams provide architecture baseline; CVEs matched against applicable techniques per component</p>
+                  </td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">✅ Code-to-runtime mapping</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">❌ No</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">❌ No</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">❌ No</td>
+                </tr>
+                <tr className="border-b border-slate-800">
+                  <td className="px-6 py-4 text-sm text-slate-300">
+                    <strong>Verdict Classification</strong>
+                    <p className="text-xs text-slate-500 mt-1">Exploitability assessment output</p>
+                  </td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-400">
+                    <div className="font-semibold text-teal-400 mb-1">✅ Tri-state classifier</div>
+                    <p className="text-xs text-slate-500">Exploitable / Not Exploitable / Needs Review → maps to ALLOW/FIX/BLOCK gates via policy overlay</p>
+                  </td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Risk score only (opaque)</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Priority score</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Risk score</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Priority score</td>
                 </tr>
                 <tr className="border-b border-slate-800">
                   <td className="px-6 py-4 text-sm text-slate-300">
@@ -858,7 +990,7 @@ export function ProductAlDeci() {
                 The composite risk score (0-100) combines EPSS percentile, KEV flag, version lag, exposure flags, Bayesian posterior (w_bayes=0.10), and Markov forecast (w_trend=0.05). The extended formula improves F1 score from 0.87 to 0.91 in validation tests.
               </p>
               <p className="text-slate-400">
-                <strong>Note:</strong> MITRE ATT&CK technique mappings are identified during LLM decision reasoning and included in evidence bundles for threat-informed prioritization and audit transparency, but are not included in the default score weights. Detailed mathematical derivations and validation results are available in the <a href="/pdfs/risk-model-deep-dive-v20251036.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300 underline">Risk Model Deep Dive whitepaper</a>.
+                <strong>Note:</strong> MITRE ATT&CK technique mappings are identified during LLM decision reasoning and included in evidence bundles for threat-informed prioritization and audit transparency, but are not included in the default score weights. Detailed mathematical derivations and validation results are available in the <a href="/pdfs/risk-model-deep-dive-v20251037.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300 underline">Risk Model Deep Dive whitepaper</a>.
               </p>
             </div>
           </div>
@@ -896,10 +1028,58 @@ export function ProductAlDeci() {
             </div>
           </div>
 
-          <div className="bg-slate-900 border border-slate-800 rounded-xl p-8 mb-12">
-            <h3 className="text-2xl font-semibold text-teal-400 mb-6">Multi-Layer Decision Pipeline</h3>
+          <div id="threat-model" className="mb-12">
+            <h3 className="text-2xl font-semibold text-teal-400 mb-6">Design-Time Threat Modeling</h3>
             <p className="text-slate-300 mb-6">
-              Decisions combine multiple intelligence sources for high-confidence verdicts:
+              Step 3 (Threat Modeling) compares CVEs against your system's architecture and threat baseline to determine exploitability in context:
+            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+              <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                <h4 className="text-lg font-semibold text-slate-50 mb-3">Architecture Baseline</h4>
+                <p className="text-slate-400 mb-3">
+                  Teams provide their system architecture, components, trust boundaries, and data flows via <code className="text-teal-400">/inputs/threat_model</code> endpoint. This creates a design-time baseline of applicable techniques and attack paths for your specific system.
+                </p>
+                <p className="text-sm text-slate-500">
+                  <strong>Format:</strong> YAML/JSON schema defining components, exposures, controls, and technique mappings
+                </p>
+              </div>
+              <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                <h4 className="text-lg font-semibold text-slate-50 mb-3">Runtime Matching</h4>
+                <p className="text-slate-400 mb-3">
+                  At decision time, CVEs are matched against the threat baseline to determine if they enable techniques that are critical for your architecture. Considers component exposure, existing controls, and attack path completion.
+                </p>
+                <p className="text-sm text-slate-500">
+                  <strong>Example:</strong> CVE enables T1190 on internet-facing API + insufficient WAF controls → Exploitable
+                </p>
+              </div>
+            </div>
+            <div className="bg-slate-950 border border-slate-800 rounded-lg p-6 mb-6">
+              <h4 className="text-lg font-semibold text-slate-50 mb-3">Sample Threat Model Schema</h4>
+              <pre className="text-sm text-slate-300 bg-slate-900 p-4 rounded overflow-x-auto">
+{`components:
+  - id: "api-gateway"
+    trust_boundary: "internet-facing"
+    data_sensitivity: "pci"
+    applicable_techniques: ["T1190", "T1078"]
+    controls: ["waf", "mfa"]
+    
+threat_baseline:
+  - technique: "T1190"
+    components: ["api-gateway", "web-frontend"]
+    impact: "critical"
+    likelihood: "high"`}
+              </pre>
+              <p className="text-slate-400 mt-3">
+                <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-orange-500/10 text-orange-400 mr-2">Beta</span>
+                Full threat tree matching and attack path analysis coming soon. Current implementation supports component-level technique mapping.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-slate-900 border border-slate-800 rounded-xl p-8 mb-12">
+            <h3 className="text-2xl font-semibold text-teal-400 mb-6">Decision Engine Internals</h3>
+            <p className="text-slate-300 mb-6">
+              Step 5 (LLM Explanation) uses multiple intelligence sources and techniques for high-confidence verdicts:
             </p>
             <div className="space-y-4">
               <div className="flex items-start gap-4">
@@ -978,19 +1158,49 @@ export function ProductAlDeci() {
           </div>
 
           <div className="bg-gradient-to-r from-teal-500/10 to-blue-500/10 border border-teal-500/20 rounded-xl p-8">
-            <h3 className="text-2xl font-semibold text-slate-50 mb-6">Verdict Types</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <h3 className="text-2xl font-semibold text-slate-50 mb-6">Tri-State Verdict Classification</h3>
+            <p className="text-slate-300 mb-6">
+              Step 6 produces an exploitability classification based on enrichment, forecasting, threat modeling, and compliance analysis:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div className="bg-slate-950 rounded-lg p-6">
-                <div className="text-3xl font-bold text-green-400 mb-2">ALLOW</div>
-                <p className="text-slate-300">Risk score &lt; 60, safe to deploy with evidence bundle</p>
+                <div className="text-3xl font-bold text-red-400 mb-2">Exploitable</div>
+                <p className="text-slate-300 mb-3">CVE enables baseline-critical technique + component exposed + controls insufficient</p>
+                <p className="text-sm text-slate-500">Example: T1190 on internet-facing API without WAF</p>
               </div>
               <div className="bg-slate-950 rounded-lg p-6">
-                <div className="text-3xl font-bold text-yellow-400 mb-2">FIX</div>
-                <p className="text-slate-300">Risk score 60-85, remediation required with clear rationale</p>
+                <div className="text-3xl font-bold text-green-400 mb-2">Not Exploitable</div>
+                <p className="text-slate-300 mb-3">CVE not in threat baseline OR controls are sufficient OR component not exposed</p>
+                <p className="text-sm text-slate-500">Example: Internal service with network segmentation</p>
               </div>
               <div className="bg-slate-950 rounded-lg p-6">
-                <div className="text-3xl font-bold text-red-400 mb-2">BLOCK</div>
-                <p className="text-slate-300">Risk score ≥ 85, deployment blocked with detailed explanation</p>
+                <div className="text-3xl font-bold text-yellow-400 mb-2">Needs Review</div>
+                <p className="text-slate-300 mb-3">Insufficient data, low LLM confidence, or missing threat baseline</p>
+                <p className="text-sm text-slate-500">Example: Novel CVE with no CWE mapping</p>
+              </div>
+            </div>
+            
+            <div className="bg-slate-950 border border-slate-700 rounded-lg p-6">
+              <h4 className="text-xl font-semibold text-slate-50 mb-4">Policy Overlay: Verdict → Pipeline Gates</h4>
+              <p className="text-slate-300 mb-4">
+                The tri-state verdict maps to pipeline gates via configurable policy overlay:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-slate-900 rounded p-4">
+                  <div className="text-lg font-bold text-red-400 mb-2">Exploitable →</div>
+                  <p className="text-slate-300 text-sm">Gate: <span className="font-semibold text-red-400">BLOCK</span> or <span className="font-semibold text-yellow-400">FIX</span></p>
+                  <p className="text-slate-500 text-xs mt-1">(policy-dependent)</p>
+                </div>
+                <div className="bg-slate-900 rounded p-4">
+                  <div className="text-lg font-bold text-green-400 mb-2">Not Exploitable →</div>
+                  <p className="text-slate-300 text-sm">Gate: <span className="font-semibold text-green-400">ALLOW</span></p>
+                  <p className="text-slate-500 text-xs mt-1">(with evidence bundle)</p>
+                </div>
+                <div className="bg-slate-900 rounded p-4">
+                  <div className="text-lg font-bold text-yellow-400 mb-2">Needs Review →</div>
+                  <p className="text-slate-300 text-sm">Gate: <span className="font-semibold text-yellow-400">FIX</span> or require approval</p>
+                  <p className="text-slate-500 text-xs mt-1">(human review)</p>
+                </div>
               </div>
             </div>
           </div>
@@ -1403,7 +1613,7 @@ export function ProductAlDeci() {
           {/* Download CTA */}
           <div className="text-center mb-16">
             <a
-              href="/pdfs/enterprise-vm-competitive-one-pager-v20251036.pdf"
+              href="/pdfs/enterprise-vm-competitive-one-pager-v20251037.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700"
@@ -1480,7 +1690,7 @@ export function ProductAlDeci() {
               Request Access
             </Link>
             <a
-              href="/pdfs/aldeci-one-pager-v20251036.pdf"
+              href="/pdfs/aldeci-one-pager-v20251037.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold text-lg hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"

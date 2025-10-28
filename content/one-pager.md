@@ -35,51 +35,46 @@ AlDeci unifies security intelligence into a single automated workflow:
 
 ---
 
-## How AlDeci Works
+## How AlDeci Works: 6-Step Decision Flow
 
-```
-┌─────────────┐
-│  Ingestion  │  Push artifacts via REST API or CLI
-└──────┬──────┘
-       │
-┌──────▼──────────┐
-│ Normalization   │  Parse CycloneDX, SPDX, SARIF, CVE feeds
-└──────┬──────────┘
-       │
-┌──────▼──────────┐
-│  Correlation    │  Build design ↔ SBOM ↔ findings ↔ CVE graph
-└──────┬──────────┘
-       │
-┌──────▼──────────┐
-│    Decision     │  Multi-layer intelligence: Vector DB + LLM + RAG +
-│                 │  Consensus + Golden Baseline + OPA Policies + SBOM Analysis
-└──────┬──────────┘
-       │
-┌──────▼──────────┐
-│    Evidence     │  Generate signed bundles with SLSA provenance
-└──────┬──────────┘
-       │
-┌──────▼──────────┐
-│    Publish      │  Deliver to ticketing, storage, audit systems
-└─────────────────┘
-```
+AlDeci processes vulnerabilities through a systematic 6-step flow that combines threat intelligence, probabilistic modeling, architecture-aware threat assessment, compliance mapping, and explainable AI:
+
+### Step 1: Enrichment
+**Inputs:** EPSS, KEV, CVSS, CWE, ExploitDB (coming soon)  
+**Output:** Enriched CVE metadata with exploit probability signals and weakness patterns
+
+### Step 2: Forecasting
+**Inputs:** Markov chain (5-state model), Bayesian analytics  
+**Output:** Risk projection with posterior probability P(exploit | signals) and vulnerability trend forecast
+
+### Step 3: Threat Modeling
+**Inputs:** Architecture baseline, threat tree (Beta), MITRE ATT&CK techniques  
+**Output:** Exploitability assessment per component based on applicable techniques, exposure, and controls
+
+### Step 4: Compliance Mapping
+**Inputs:** Org-specific controls, SOC2, ISO 27001, APRA CPS 234, Essential Eight  
+**Output:** Control coverage report with policy violations and compliance gaps
+
+### Step 5: LLM Explanation
+**Inputs:** Multi-LLM consensus (GPT-5, Claude-3, Gemini-2), RAG with vector DB, hallucination guard  
+**Output:** Natural language explanation with confidence score and mathematical backing
+
+### Step 6: Final Verdict
+**Inputs:** All prior steps + policy overlay  
+**Output:** Tri-state classification with gate mapping
+
+**Verdict Types:**
+- **Exploitable** → CVE enables baseline-critical technique + component exposed + controls insufficient → Gate: BLOCK or FIX (policy-dependent)
+- **Not Exploitable** → CVE not in threat baseline OR controls sufficient OR component not exposed → Gate: ALLOW (with evidence bundle)
+- **Needs Review** → Insufficient data, low LLM confidence, or missing threat baseline → Gate: FIX or require human approval
 
 ---
 
-## Decision Engine: Six-Layer Intelligence
+## MITRE ATT&CK: Dual Role
 
-1. **Vector DB Pattern Matching** - Semantic search against known vulnerability patterns
-2. **LLM + RAG Context Enrichment** - Multi-model reasoning (GPT-5, Claude-3, Gemini-2) with retrieval-augmented generation
-3. **Consensus Checker** - Escalates when LLM agreement < 50%, requires human review
-4. **Golden Regression Baseline** - Compares against known-good security states
-5. **OPA Policy Engine** - Policy-as-code enforcement with Rego rules
-6. **SBOM Dependency Analysis** - Transitive vulnerability detection across supply chain
-7. **Probabilistic Models** - Bayesian analytics for risk projection and Markov chain forecasting of vulnerability trends inform prioritization and near-term risk trajectory
+**Design-Time Baseline (Beta):** Teams provide system architecture to define applicable techniques per component. This baseline feeds Step 3 (Threat Modeling) and Step 4 (Compliance Mapping) policies.
 
-**Output Verdicts:**
-- **ALLOW** (Risk < 60): Safe to deploy with evidence bundle
-- **FIX** (Risk 60-85): Remediation required with clear rationale
-- **BLOCK** (Risk ≥ 85): Deployment blocked with detailed explanation
+**Runtime Evidence (Available):** LLM identifies MITRE techniques during Step 5 reasoning. Technique mappings are included in evidence bundles for threat context and audit transparency.
 
 ---
 

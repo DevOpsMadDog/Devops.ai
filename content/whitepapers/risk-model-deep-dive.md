@@ -120,6 +120,54 @@ AlDeci's risk model addresses these limitations through:
 
 ---
 
+## 2.3 Six-Step Decision Flow Architecture
+
+AlDeci processes vulnerabilities through a systematic 6-step flow that integrates risk scoring with threat modeling, compliance mapping, and explainable AI:
+
+### Step 1: Enrichment
+**Purpose**: Gather exploit probability signals and weakness patterns  
+**Inputs**: EPSS, KEV, CVSS, CWE, ExploitDB (coming soon)  
+**Output**: Enriched CVE metadata with exploit signals  
+**Risk Model Integration**: EPSS percentile and KEV flag feed into composite risk score (Section 4)
+
+### Step 2: Forecasting
+**Purpose**: Project near-term risk trajectory  
+**Inputs**: Markov chain (5-state model), Bayesian analytics  
+**Output**: Risk projection with posterior probability P(exploit | signals) and vulnerability trend forecast  
+**Risk Model Integration**: Bayesian posterior (w_bayes=0.10) and Markov forecast (w_trend=0.05) extend composite formula (Section 6)
+
+### Step 3: Threat Modeling
+**Purpose**: Assess exploitability in architectural context  
+**Inputs**: Architecture baseline, threat tree (Beta), MITRE ATT&CK techniques  
+**Output**: Exploitability assessment per component based on applicable techniques, exposure, and controls  
+**Risk Model Integration**: Threat modeling results inform context-aware weighting adjustments
+
+### Step 4: Compliance Mapping
+**Purpose**: Identify control coverage gaps  
+**Inputs**: Org-specific controls, SOC2, ISO 27001, APRA CPS 234, Essential Eight  
+**Output**: Control coverage report with policy violations and compliance gaps  
+**Risk Model Integration**: Control coverage affects final risk score adjustments
+
+### Step 5: LLM Explanation
+**Purpose**: Generate human-readable explanations with mathematical backing  
+**Inputs**: Multi-LLM consensus (GPT-5, Claude-3, Gemini-2), RAG with vector DB, hallucination guard  
+**Output**: Natural language explanation with confidence score  
+**Risk Model Integration**: LLM validates risk score reasonableness and provides audit-ready explanations
+
+### Step 6: Final Verdict
+**Purpose**: Produce actionable classification with gate mapping  
+**Inputs**: All prior steps + policy overlay  
+**Output**: Tri-state classification (Exploitable / Not Exploitable / Needs Review)
+
+**Verdict Mapping:**
+- **Exploitable** → CVE enables baseline-critical technique + component exposed + controls insufficient → Gate: BLOCK or FIX (policy-dependent)
+- **Not Exploitable** → CVE not in threat baseline OR controls sufficient OR component not exposed → Gate: ALLOW (with evidence bundle)
+- **Needs Review** → Insufficient data, low LLM confidence, or missing threat baseline → Gate: FIX or require human approval
+
+**Note**: The composite risk score (0-100) from Section 4 is one input to Step 6 verdict determination, alongside threat modeling, compliance mapping, and LLM reasoning.
+
+---
+
 ## 3. Signal Sources and Data Feeds
 
 ### 3.1 EPSS (Exploit Prediction Scoring System)
