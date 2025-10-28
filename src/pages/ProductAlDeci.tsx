@@ -121,6 +121,21 @@ function DecisionFlowDiagram() {
       {/* Arrow from Probabilistic to Risk Scoring */}
       <path d="M 355 180 L 355 140" stroke="#8b5cf6" strokeWidth="2" markerEnd="url(#arrowhead3)" />
       
+      {/* MITRE ATT&CK (feeding into Decision Engine) */}
+      <rect x="510" y="180" width="150" height="60" fill="#1e293b" stroke="#f59e0b" strokeWidth="2" rx="8" />
+      <text x="585" y="205" fill="#f1f5f9" fontSize="13" fontWeight="bold" textAnchor="middle">
+        MITRE ATT&CK
+      </text>
+      <text x="585" y="220" fill="#94a3b8" fontSize="11" textAnchor="middle">
+        Technique mapping
+      </text>
+      <text x="585" y="233" fill="#94a3b8" fontSize="11" textAnchor="middle">
+        T1190, T1059, T1078
+      </text>
+      
+      {/* Arrow from MITRE to Decision Engine */}
+      <path d="M 585 180 L 585 140" stroke="#f59e0b" strokeWidth="2" markerEnd="url(#arrowhead4)" />
+      
       {/* Risk Scoring */}
       <rect x="280" y="80" width="150" height="60" fill="#1e293b" stroke="#3b82f6" strokeWidth="2" rx="8" />
       <text x="355" y="110" fill="#f1f5f9" fontSize="14" fontWeight="bold" textAnchor="middle">
@@ -184,6 +199,9 @@ function DecisionFlowDiagram() {
         <marker id="arrowhead3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
           <polygon points="0 0, 10 3, 0 6" fill="#8b5cf6" />
         </marker>
+        <marker id="arrowhead4" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+          <polygon points="0 0, 10 3, 0 6" fill="#f59e0b" />
+        </marker>
       </defs>
     </svg>
   );
@@ -236,7 +254,7 @@ export function ProductAlDeci() {
               Request Access
             </Link>
             <a
-              href="/pdfs/aldeci-one-pager-v20251034.pdf"
+              href="/pdfs/aldeci-one-pager-v20251035.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"
@@ -696,10 +714,13 @@ export function ProductAlDeci() {
                 </tr>
                 <tr className="border-b border-slate-800">
                   <td className="px-6 py-4 text-sm text-slate-300">
-                    <strong>MITRE ATT&CK Checks</strong>
-                    <p className="text-xs text-slate-500 mt-1">Threat framework mapping</p>
+                    <strong>MITRE ATT&CK Mapping</strong>
+                    <p className="text-xs text-slate-500 mt-1">Adversary tactics & techniques identification</p>
                   </td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-400">✅ Configurable threat intel feeds</td>
+                  <td className="px-6 py-4 text-center text-sm text-slate-400">
+                    <div className="font-semibold text-teal-400 mb-1">✅ LLM-powered technique mapping</div>
+                    <p className="text-xs text-slate-500">GPT-5 maps CVEs to MITRE techniques (T1190, T1059, T1078, T1003) with tactic context for threat-informed prioritization</p>
+                  </td>
                   <td className="px-6 py-4 text-center text-sm text-slate-500">✅ Live threat feeds</td>
                   <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Limited</td>
                   <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Limited</td>
@@ -834,7 +855,40 @@ export function ProductAlDeci() {
             <div className="bg-slate-950 border border-slate-800 rounded-lg p-6">
               <h4 className="text-lg font-semibold text-slate-50 mb-3">Score Composition</h4>
               <p className="text-slate-400">
-                Bayesian posterior and Markov trend outputs feed into the composite risk score via calibrated weights (w_bayes=0.10, w_trend=0.05). The extended formula improves F1 score from 0.87 to 0.91 in validation tests. Detailed mathematical derivations and validation results are available in the <a href="/pdfs/risk-model-deep-dive-v20251034.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300 underline">Risk Model Deep Dive whitepaper</a>.
+                Bayesian posterior and Markov trend outputs feed into the composite risk score via calibrated weights (w_bayes=0.10, w_trend=0.05). The extended formula improves F1 score from 0.87 to 0.91 in validation tests. Detailed mathematical derivations and validation results are available in the <a href="/pdfs/risk-model-deep-dive-v20251035.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300 underline">Risk Model Deep Dive whitepaper</a>.
+              </p>
+            </div>
+          </div>
+
+          <div id="mitre" className="mb-12">
+            <h3 className="text-2xl font-semibold text-teal-400 mb-6">MITRE ATT&CK Threat Mapping</h3>
+            <p className="text-slate-300 mb-6">
+              AlDeci maps vulnerabilities to adversary tactics and techniques from the MITRE ATT&CK framework, enabling threat-informed prioritization based on real-world attack patterns:
+            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+              <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                <h4 className="text-lg font-semibold text-slate-50 mb-3">LLM-Powered Technique Identification</h4>
+                <p className="text-slate-400 mb-3">
+                  GPT-5 analyzes CVE descriptions, exploit patterns, and vulnerability characteristics to identify applicable MITRE ATT&CK techniques. The model maps vulnerabilities to specific tactics (Initial Access, Execution, Credential Access, etc.) and techniques with contextual reasoning.
+                </p>
+                <p className="text-sm text-slate-500">
+                  <strong>Example techniques:</strong> T1190 (Exploit Public-Facing Application), T1059 (Command Injection), T1078 (Valid Accounts), T1003 (Credential Dumping)
+                </p>
+              </div>
+              <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                <h4 className="text-lg font-semibold text-slate-50 mb-3">Threat-Informed Prioritization</h4>
+                <p className="text-slate-400 mb-3">
+                  MITRE technique mappings feed into risk scoring by identifying vulnerabilities that enable high-impact attack paths. Vulnerabilities mapped to Initial Access or Credential Access tactics receive elevated priority scores due to their role in attack chains.
+                </p>
+                <p className="text-sm text-slate-500">
+                  <strong>Integration:</strong> Technique mappings appear in LLM decision responses, evidence bundles, and compliance reports for threat-context documentation
+                </p>
+              </div>
+            </div>
+            <div className="bg-slate-950 border border-slate-800 rounded-lg p-6">
+              <h4 className="text-lg font-semibold text-slate-50 mb-3">Configurable Threat Intelligence</h4>
+              <p className="text-slate-400">
+                AlDeci integrates configurable threat intelligence feeds including MITRE ATT&CK, CISA KEV, EPSS, and custom threat intel sources. The overlay configuration allows teams to enable/disable specific threat intelligence modules based on their security posture and compliance requirements.
               </p>
             </div>
           </div>
@@ -906,6 +960,15 @@ export function ProductAlDeci() {
                 <div>
                   <h4 className="text-lg font-semibold text-slate-50">Probabilistic Models</h4>
                   <p className="text-slate-400">Bayesian analytics for risk projection and Markov chain forecasting of vulnerability trends</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-8 h-8 bg-teal-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-teal-400 font-bold">8</span>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-slate-50">MITRE ATT&CK Mapping</h4>
+                  <p className="text-slate-400">Maps vulnerabilities to adversary tactics and techniques (T1190: Exploit Public-Facing Application, T1059: Command Injection, T1078: Valid Accounts, T1003: Credential Dumping) for threat-informed prioritization</p>
                 </div>
               </div>
             </div>
@@ -1337,7 +1400,7 @@ export function ProductAlDeci() {
           {/* Download CTA */}
           <div className="text-center mb-16">
             <a
-              href="/pdfs/enterprise-vm-competitive-one-pager-v20251034.pdf"
+              href="/pdfs/enterprise-vm-competitive-one-pager-v20251035.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700"
@@ -1414,7 +1477,7 @@ export function ProductAlDeci() {
               Request Access
             </Link>
             <a
-              href="/pdfs/aldeci-one-pager-v20251034.pdf"
+              href="/pdfs/aldeci-one-pager-v20251035.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold text-lg hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"
