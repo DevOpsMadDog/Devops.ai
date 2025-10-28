@@ -295,19 +295,36 @@ export function ProductAlDeci() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h1 className="text-5xl sm:text-6xl font-bold text-slate-50 mb-4">
-              AlDeci
+              Automate Trust. Prove Security.
             </h1>
-            <p className="text-lg text-slate-400 mb-2">formerly FixOps</p>
-            <p className="text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Unified security intelligence that transforms scanner noise and SBOM sprawl into risk-based actions and cryptographically signed evidence.
+            <p className="text-lg text-slate-400 mb-4">AlDeci (formerly FixOps)</p>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-6">
+              What if you could cut scanner noise by ~60% and ship with signed evidence—without adding a single connector?
             </p>
+            
+            {/* Micro-chips */}
+            <div className="flex flex-wrap gap-3 justify-center mb-8">
+              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-teal-500/10 text-teal-400 border border-teal-500/20">
+                Tri-state verdicts
+              </span>
+              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                Signed evidence
+              </span>
+              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                30-minute onboarding
+              </span>
+              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-green-500/10 text-green-400 border border-green-500/20">
+                On-prem ready
+              </span>
+            </div>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
               className="px-8 py-4 bg-teal-500 text-slate-950 rounded-lg font-semibold hover:bg-teal-400 transition-all text-center"
             >
-              Request Access
+              Book a Demo
             </Link>
             <a
               href="/pdfs/aldeci-one-pager-v20251037.pdf"
@@ -316,14 +333,319 @@ export function ProductAlDeci() {
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"
             >
               <Download size={20} />
-              Download Product One-Pager
+              Download One-Pager
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* What Breaks Today - Pain Points */}
+      <section id="overview" className="bg-slate-950 py-16 border-t border-slate-800">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-slate-50 mb-8 text-center">What Breaks in Enterprise Vulnerability Management</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+              <div className="text-red-400 text-4xl mb-4">40-60%</div>
+              <h3 className="text-lg font-semibold text-slate-50 mb-2">Scanner Sprawl</h3>
+              <p className="text-slate-400 text-sm">
+                Multiple security tools generate overlapping findings with high false-positive rates, overwhelming security teams with noise
+              </p>
+            </div>
+            <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+              <div className="text-yellow-400 text-4xl mb-4">∅</div>
+              <h3 className="text-lg font-semibold text-slate-50 mb-2">Context Missing</h3>
+              <p className="text-slate-400 text-sm">
+                No correlation between design artifacts ↔ SBOM components ↔ security findings ↔ existing controls
+              </p>
+            </div>
+            <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
+              <div className="text-orange-400 text-4xl mb-4">60%</div>
+              <h3 className="text-lg font-semibold text-slate-50 mb-2">Audit Drag</h3>
+              <p className="text-slate-400 text-sm">
+                Manual evidence collection for compliance frameworks consumes 40-60% of security team time
+              </p>
+            </div>
+          </div>
+          <p className="text-center text-slate-400 mt-8 text-sm">
+            <strong>Who we're for:</strong> CISOs, DevSecOps leads, and regulated teams managing multi-scanner environments
+          </p>
+        </div>
+      </section>
+
+      {/* Why AlDeci is Different - USP */}
+      <section id="usp" className="bg-slate-900 py-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-slate-50 mb-8 text-center">Why AlDeci is Different</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-slate-950 border border-slate-800 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-teal-400 mb-2">Tri-state exploitability classifier</h3>
+              <p className="text-slate-400 text-sm">
+                Exploitable / Not Exploitable / Needs Review → maps to ALLOW/FIX/BLOCK gates via policy overlay
+              </p>
+            </div>
+            <div className="bg-slate-950 border border-slate-800 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-blue-400 mb-2">Evidence-as-code</h3>
+              <p className="text-slate-400 text-sm">
+                Cryptographically signed, audit-ready bundles with SLSA provenance and 7-year retention
+              </p>
+            </div>
+            <div className="bg-slate-950 border border-slate-800 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-purple-400 mb-2">Push-model ingestion</h3>
+              <p className="text-slate-400 text-sm">
+                Works with any SBOM/SARIF tool in minutes—no scanner-specific connectors required
+              </p>
+            </div>
+            <div className="bg-slate-950 border border-slate-800 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-green-400 mb-2">Explainable LLM reasoning</h3>
+              <p className="text-slate-400 text-sm">
+                Multi-LLM consensus with hallucination guard, confidence scores, and mathematical backing
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Your Moat - What's Hard to Replicate */}
+      <section id="moat" className="bg-slate-950 py-16 border-t border-slate-800">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-slate-50 mb-4 text-center">What Makes This Hard to Replicate</h2>
+          <p className="text-slate-400 text-center mb-8 max-w-3xl mx-auto">
+            AlDeci's competitive moat comes from deep technical capabilities that require significant R&D investment
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="bg-slate-900 border border-orange-500/20 rounded-lg p-6">
+              <div className="flex items-center gap-2 mb-2">
+                <h3 className="text-lg font-semibold text-slate-50">Design-time Threat Modeling</h3>
+                <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-orange-500/10 text-orange-400">Beta</span>
+              </div>
+              <p className="text-slate-400 text-sm">
+                Architecture baseline → applicable techniques per component → feeds Step 3 & 4 policies
+              </p>
+            </div>
+            <div className="bg-slate-900 border border-teal-500/20 rounded-lg p-6">
+              <div className="flex items-center gap-2 mb-2">
+                <h3 className="text-lg font-semibold text-slate-50">MITRE ATT&CK Dual Role</h3>
+                <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-teal-500/10 text-teal-400">Available</span>
+              </div>
+              <p className="text-slate-400 text-sm">
+                Design-time baseline (Beta) + Runtime evidence (Available) for comprehensive threat mapping
+              </p>
+            </div>
+            <div className="bg-slate-900 border border-purple-500/20 rounded-lg p-6">
+              <div className="flex items-center gap-2 mb-2">
+                <h3 className="text-lg font-semibold text-slate-50">Probabilistic Forecasting</h3>
+                <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-purple-500/10 text-purple-400">Available</span>
+              </div>
+              <p className="text-slate-400 text-sm">
+                Bayesian analytics + Markov chain (5-state model, 76% accuracy) integrated into verdict gates
+              </p>
+            </div>
+            <div className="bg-slate-900 border border-blue-500/20 rounded-lg p-6">
+              <div className="flex items-center gap-2 mb-2">
+                <h3 className="text-lg font-semibold text-slate-50">7-Year Retention + SLSA</h3>
+                <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-blue-500/10 text-blue-400">Available</span>
+              </div>
+              <p className="text-slate-400 text-sm">
+                Cryptographically signed evidence with SLSA v1 provenance, on-prem/air-gapped deployment
+              </p>
+            </div>
+          </div>
+          <div className="bg-slate-900 border border-slate-700 rounded-lg p-6 text-center">
+            <p className="text-slate-300 mb-3">
+              <strong>Join the Design Partner Program</strong> to co-develop threat tree matching and architecture-aware policies
+            </p>
             <Link
-              to="/contact"
-              className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700 text-center"
+              to="/partners/design"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-teal-500 text-slate-950 rounded-lg font-semibold hover:bg-teal-400 transition-all"
             >
-              Book a Demo
+              Apply Now
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Competitive Snapshot (2 min) */}
+      <section id="compare" className="bg-slate-900 py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-slate-50 mb-3 text-center">Competitive Snapshot (2 min)</h2>
+          <p className="text-slate-400 text-center mb-8 max-w-3xl mx-auto">
+            AlDeci delivers instant-on contextual risk re-scoring with automated evidence bundles
+          </p>
+          
+          {/* Quick Comparison Table */}
+          <div className="overflow-x-auto mb-8">
+            <table className="w-full border-collapse bg-slate-950 rounded-lg overflow-hidden text-sm">
+              <thead>
+                <tr className="bg-slate-800">
+                  <th className="px-4 py-3 text-left text-xs font-semibold text-slate-300 border-b border-slate-700">Feature</th>
+                  <th className="px-4 py-3 text-center text-xs font-semibold text-teal-400 border-b border-slate-700">AlDeci</th>
+                  <th className="px-4 py-3 text-center text-xs font-semibold text-slate-300 border-b border-slate-700">Apiiro</th>
+                  <th className="px-4 py-3 text-center text-xs font-semibold text-slate-300 border-b border-slate-700">ArmorCode</th>
+                  <th className="px-4 py-3 text-center text-xs font-semibold text-slate-300 border-b border-slate-700">Cycode</th>
+                </tr>
+              </thead>
+              <tbody className="text-xs">
+                <tr className="border-b border-slate-800">
+                  <td className="px-4 py-3 text-slate-300">Onboarding Speed</td>
+                  <td className="px-4 py-3 text-center text-slate-400">30 min</td>
+                  <td className="px-4 py-3 text-center text-slate-500">Weeks</td>
+                  <td className="px-4 py-3 text-center text-slate-500">Days</td>
+                  <td className="px-4 py-3 text-center text-slate-500">Days</td>
+                </tr>
+                <tr className="border-b border-slate-800">
+                  <td className="px-4 py-3 text-slate-300">Decision Transparency</td>
+                  <td className="px-4 py-3 text-center text-slate-400">✅ Full breakdown</td>
+                  <td className="px-4 py-3 text-center text-slate-500">⚠️ Black box AI</td>
+                  <td className="px-4 py-3 text-center text-slate-500">⚠️ Risk score</td>
+                  <td className="px-4 py-3 text-center text-slate-500">⚠️ Limited</td>
+                </tr>
+                <tr className="border-b border-slate-800">
+                  <td className="px-4 py-3 text-slate-300">Evidence Automation</td>
+                  <td className="px-4 py-3 text-center text-slate-400">✅ SLSA provenance</td>
+                  <td className="px-4 py-3 text-center text-slate-500">⚠️ Internal logs</td>
+                  <td className="px-4 py-3 text-center text-slate-500">⚠️ Reports</td>
+                  <td className="px-4 py-3 text-center text-slate-500">⚠️ Basic</td>
+                </tr>
+                <tr className="border-b border-slate-800">
+                  <td className="px-4 py-3 text-slate-300">Deployment Options</td>
+                  <td className="px-4 py-3 text-center text-slate-400">Demo + On-prem</td>
+                  <td className="px-4 py-3 text-center text-slate-500">SaaS only</td>
+                  <td className="px-4 py-3 text-center text-slate-500">SaaS</td>
+                  <td className="px-4 py-3 text-center text-slate-500">SaaS + Private</td>
+                </tr>
+                <tr className="border-b border-slate-800">
+                  <td className="px-4 py-3 text-slate-300">Integration Model</td>
+                  <td className="px-4 py-3 text-center text-slate-400">Push (any tool)</td>
+                  <td className="px-4 py-3 text-center text-slate-500">Pull connectors</td>
+                  <td className="px-4 py-3 text-center text-slate-500">Integrations</td>
+                  <td className="px-4 py-3 text-center text-slate-500">Integrations</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 text-slate-300">Retention Period</td>
+                  <td className="px-4 py-3 text-center text-slate-400">7 years</td>
+                  <td className="px-4 py-3 text-center text-slate-500">Standard</td>
+                  <td className="px-4 py-3 text-center text-slate-500">Standard</td>
+                  <td className="px-4 py-3 text-center text-slate-500">Standard</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          {/* FixOps vs Apiiro Detailed Comparison */}
+          <div className="bg-slate-950 border border-slate-800 rounded-lg p-6 mb-6">
+            <h3 className="text-xl font-semibold text-slate-50 mb-4">FixOps vs Apiiro – Detailed Comparison</h3>
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-slate-700">
+                    <th className="text-left py-2 px-3 text-slate-300 font-semibold">Feature</th>
+                    <th className="text-left py-2 px-3 text-teal-400 font-semibold">FixOps</th>
+                    <th className="text-left py-2 px-3 text-slate-300 font-semibold">Apiiro</th>
+                  </tr>
+                </thead>
+                <tbody className="text-slate-400">
+                  <tr className="border-b border-slate-800">
+                    <td className="py-2 px-3">Mode Support</td>
+                    <td className="py-2 px-3">✅ Demo + Production</td>
+                    <td className="py-2 px-3">❌ Production only</td>
+                  </tr>
+                  <tr className="border-b border-slate-800">
+                    <td className="py-2 px-3">Decision Transparency</td>
+                    <td className="py-2 px-3">✅ Full breakdown + evidence</td>
+                    <td className="py-2 px-3">⚠️ Limited (black box AI)</td>
+                  </tr>
+                  <tr className="border-b border-slate-800">
+                    <td className="py-2 px-3">Consensus Validation</td>
+                    <td className="py-2 px-3">✅ 85%+ threshold, multi-source</td>
+                    <td className="py-2 px-3">⚠️ Non-transparent AI logic</td>
+                  </tr>
+                  <tr className="border-b border-slate-800">
+                    <td className="py-2 px-3">Code Analysis Depth</td>
+                    <td className="py-2 px-3">⚠️ Service-level</td>
+                    <td className="py-2 px-3">✅ Code-to-runtime mapping</td>
+                  </tr>
+                  <tr className="border-b border-slate-800">
+                    <td className="py-2 px-3">Threat Intelligence</td>
+                    <td className="py-2 px-3">⚠️ Configurable feeds</td>
+                    <td className="py-2 px-3">✅ Live threat feeds</td>
+                  </tr>
+                  <tr className="border-b border-slate-800">
+                    <td className="py-2 px-3">AI Model Type</td>
+                    <td className="py-2 px-3">🤖 LLM-based pattern match</td>
+                    <td className="py-2 px-3">🧠 Behavioral anomaly detection</td>
+                  </tr>
+                  <tr className="border-b border-slate-800">
+                    <td className="py-2 px-3">Explainability</td>
+                    <td className="py-2 px-3">✅ Step-by-step with scores</td>
+                    <td className="py-2 px-3">⚠️ Risk score only</td>
+                  </tr>
+                  <tr className="border-b border-slate-800">
+                    <td className="py-2 px-3">Deployment Options</td>
+                    <td className="py-2 px-3">✅ Demo → Prod</td>
+                    <td className="py-2 px-3">❌ Enterprise only</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2 px-3">Framework Openness</td>
+                    <td className="py-2 px-3">✅ Transparent, customizable</td>
+                    <td className="py-2 px-3">❌ Proprietary</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h4 className="text-lg font-semibold text-slate-50 mb-3">Example Decision Comparison</h4>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-slate-700">
+                    <th className="text-left py-2 px-3 text-slate-300 font-semibold">Metric</th>
+                    <th className="text-left py-2 px-3 text-teal-400 font-semibold">FixOps</th>
+                    <th className="text-left py-2 px-3 text-slate-300 font-semibold">Apiiro</th>
+                  </tr>
+                </thead>
+                <tbody className="text-slate-400">
+                  <tr className="border-b border-slate-800">
+                    <td className="py-2 px-3">Output</td>
+                    <td className="py-2 px-3">ALLOW (92% confidence)</td>
+                    <td className="py-2 px-3">Risk Score: 8.5</td>
+                  </tr>
+                  <tr className="border-b border-slate-800">
+                    <td className="py-2 px-3">Details</td>
+                    <td className="py-2 px-3">
+                      - Vector DB: 94% match<br/>
+                      - Regression: 1,247 cases passed<br/>
+                      - Policies: 0 violations<br/>
+                      - Context: PCI critical<br/>
+                      - Evidence: EVD-2024-0847
+                    </td>
+                    <td className="py-2 px-3">Opaque AI decision, limited breakdown</td>
+                  </tr>
+                  <tr className="border-b border-slate-800">
+                    <td className="py-2 px-3">Audit Evidence</td>
+                    <td className="py-2 px-3">✅ Cryptographically signed</td>
+                    <td className="py-2 px-3">⚠️ Internal system logs only</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2 px-3">Customization</td>
+                    <td className="py-2 px-3">✅ Policy & threshold configurable</td>
+                    <td className="py-2 px-3">❌ Fixed proprietary logic</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Download CTA */}
+          <div className="text-center">
+            <a
+              href="/pdfs/enterprise-vm-competitive-one-pager-v20251037.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700"
+            >
+              <Download size={20} />
+              Download Full Competitive Analysis
+            </a>
           </div>
         </div>
       </section>
@@ -478,14 +800,11 @@ export function ProductAlDeci() {
           </div>
 
           {/* Decision Flow Diagram */}
-          <div id="decision-flow" className="mb-12">
-            <h3 className="text-2xl font-semibold text-teal-400 mb-6 text-center">Decision & Evidence Flow</h3>
-            <div className="bg-slate-950 border border-slate-800 rounded-xl p-8">
-              <DecisionFlowDiagram />
-            </div>
+          <div id="how" className="mb-12">
+            <h3 className="text-2xl font-semibold text-teal-400 mb-6 text-center">How It Works: 6-Step Decision Flow</h3>
             
-            {/* Step → What we use → Output artifact table */}
-            <div className="bg-slate-900 border border-slate-800 rounded-lg p-6 mt-8">
+            {/* Step → What we use → Output artifact table - Always Visible */}
+            <div className="bg-slate-900 border border-slate-800 rounded-lg p-6 mb-6">
               <h4 className="text-xl font-semibold text-slate-50 mb-4">6-Step Flow Summary</h4>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
@@ -531,6 +850,17 @@ export function ProductAlDeci() {
                 </table>
               </div>
             </div>
+
+            {/* Full Decision Flow Diagram - Collapsible */}
+            <details className="bg-slate-950 border border-slate-800 rounded-lg overflow-hidden">
+              <summary className="px-6 py-4 cursor-pointer hover:bg-slate-900 transition-colors text-slate-50 font-semibold flex items-center justify-between">
+                <span>View Full Decision Flow Diagram</span>
+                <span className="text-slate-400 text-sm">Click to expand</span>
+              </summary>
+              <div className="p-8 border-t border-slate-800">
+                <DecisionFlowDiagram />
+              </div>
+            </details>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
@@ -1480,194 +1810,6 @@ threat_baseline:
                   <span>Immutable audit logs</span>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why AlDeci is Different */}
-      <section className="bg-slate-900 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-slate-50 mb-12 text-center">Why AlDeci is Different</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-slate-950 border border-slate-800 rounded-xl p-8 text-center">
-              <div className="w-16 h-16 bg-teal-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="text-teal-400" size={32} />
-              </div>
-              <h3 className="text-xl font-semibold text-slate-50 mb-3">Push-Model Architecture</h3>
-              <p className="text-slate-400">
-                Teams push artifacts to AlDeci—no complex connectors or scanner integrations required. Works with any tool that outputs SBOM or SARIF.
-              </p>
-            </div>
-
-            <div className="bg-slate-950 border border-slate-800 rounded-xl p-8 text-center">
-              <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="text-blue-400" size={32} />
-              </div>
-              <h3 className="text-xl font-semibold text-slate-50 mb-3">Evidence + Prioritization</h3>
-              <p className="text-slate-400">
-                Single workflow produces both risk-based prioritization and audit-ready evidence. No separate compliance tools needed.
-              </p>
-            </div>
-
-            <div className="bg-slate-950 border border-slate-800 rounded-xl p-8 text-center">
-              <div className="w-16 h-16 bg-teal-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Lock className="text-teal-400" size={32} />
-              </div>
-              <h3 className="text-xl font-semibold text-slate-50 mb-3">On-Prem Friendly</h3>
-              <p className="text-slate-400">
-                Transparent pipeline with explainable outputs. Deploy on-premises or in your VPC. No black-box SaaS required.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Compare to ASPM Platforms */}
-      <section className="bg-slate-950 py-20 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-slate-50 mb-4">
-              Compare AlDeci to ASPM Platforms
-            </h2>
-            <p className="text-lg text-slate-400 max-w-3xl mx-auto">
-              AlDeci occupies the gap between lightweight triage tools and heavyweight governance platforms by delivering instant-on contextual risk re-scoring with automated evidence bundles.
-            </p>
-          </div>
-
-          {/* Comparison Matrix */}
-          <div className="overflow-x-auto mb-12">
-            <table className="w-full border-collapse bg-slate-900 rounded-xl overflow-hidden">
-              <thead>
-                <tr className="bg-slate-800">
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-slate-300 border-b border-slate-700">Feature</th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-teal-400 border-b border-slate-700">AlDeci</th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-slate-300 border-b border-slate-700">Apiiro</th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-slate-300 border-b border-slate-700">ArmorCode</th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-slate-300 border-b border-slate-700">Cycode</th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-slate-300 border-b border-slate-700">Vulcan Cyber</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-slate-800">
-                  <td className="px-6 py-4 text-sm text-slate-300">Onboarding Speed</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-400">30 min instant-on</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">Weeks (connector setup)</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">Days (integration)</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">Days (integration)</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">Days (integration)</td>
-                </tr>
-                <tr className="border-b border-slate-800">
-                  <td className="px-6 py-4 text-sm text-slate-300">Risk Scoring</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-400">EPSS + KEV + Context</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">Behavioral AI</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">Multi-scanner correlation</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">Risk-based prioritization</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">Cyber risk scoring</td>
-                </tr>
-                <tr className="border-b border-slate-800">
-                  <td className="px-6 py-4 text-sm text-slate-300">Evidence Automation</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-400">✅ SLSA provenance</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Internal logs</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Compliance reports</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Basic reports</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Remediation tracking</td>
-                </tr>
-                <tr className="border-b border-slate-800">
-                  <td className="px-6 py-4 text-sm text-slate-300">Deployment Options</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-400">Demo + Enterprise (on-prem)</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">Enterprise SaaS only</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">SaaS</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">SaaS + Private cloud</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">SaaS</td>
-                </tr>
-                <tr className="border-b border-slate-800">
-                  <td className="px-6 py-4 text-sm text-slate-300">Decision Transparency</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-400">✅ Full breakdown</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Black box AI</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Risk score only</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Limited details</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">⚠️ Risk score only</td>
-                </tr>
-                <tr className="border-b border-slate-800">
-                  <td className="px-6 py-4 text-sm text-slate-300">Retention Period</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-400">7 years (Enterprise)</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">Standard retention</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">Standard retention</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">Standard retention</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">Standard retention</td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 text-sm text-slate-300">Integration Model</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-400">Push-based (any tool)</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">Pull-based connectors</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">Scanner integrations</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">Platform integrations</td>
-                  <td className="px-6 py-4 text-center text-sm text-slate-500">Scanner integrations</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          {/* Download CTA */}
-          <div className="text-center mb-16">
-            <a
-              href="/pdfs/enterprise-vm-competitive-one-pager-v20251037.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700"
-            >
-              <Download size={20} />
-              Download Full Competitive Analysis + Enterprise Examples
-            </a>
-          </div>
-
-          {/* Integrates With Section */}
-          <div className="border-t border-slate-800 pt-16">
-            <h3 className="text-2xl font-bold text-slate-50 mb-6 text-center">
-              Integrates With Your Existing Security Tools
-            </h3>
-            <p className="text-slate-400 text-center mb-8 max-w-3xl mx-auto">
-              AlDeci works alongside your scanners and security tools, not as a replacement. Push SBOM and SARIF outputs from any tool.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-              <div className="bg-slate-900 border border-slate-800 rounded-lg p-4 text-center">
-                <p className="text-sm font-medium text-slate-300">Snyk</p>
-              </div>
-              <div className="bg-slate-900 border border-slate-800 rounded-lg p-4 text-center">
-                <p className="text-sm font-medium text-slate-300">Wiz</p>
-              </div>
-              <div className="bg-slate-900 border border-slate-800 rounded-lg p-4 text-center">
-                <p className="text-sm font-medium text-slate-300">Tenable</p>
-              </div>
-              <div className="bg-slate-900 border border-slate-800 rounded-lg p-4 text-center">
-                <p className="text-sm font-medium text-slate-300">Orca Security</p>
-              </div>
-              <div className="bg-slate-900 border border-slate-800 rounded-lg p-4 text-center">
-                <p className="text-sm font-medium text-slate-300">GitHub Advanced Security</p>
-              </div>
-              <div className="bg-slate-900 border border-slate-800 rounded-lg p-4 text-center">
-                <p className="text-sm font-medium text-slate-300">Qualys</p>
-              </div>
-              <div className="bg-slate-900 border border-slate-800 rounded-lg p-4 text-center">
-                <p className="text-sm font-medium text-slate-300">SonarQube</p>
-              </div>
-              <div className="bg-slate-900 border border-slate-800 rounded-lg p-4 text-center">
-                <p className="text-sm font-medium text-slate-300">Trivy</p>
-              </div>
-              <div className="bg-slate-900 border border-slate-800 rounded-lg p-4 text-center">
-                <p className="text-sm font-medium text-slate-300">Grype</p>
-              </div>
-              <div className="bg-slate-900 border border-slate-800 rounded-lg p-4 text-center">
-                <p className="text-sm font-medium text-slate-300">Nexus Lifecycle</p>
-              </div>
-              <div className="bg-slate-900 border border-slate-800 rounded-lg p-4 text-center">
-                <p className="text-sm font-medium text-slate-300">Checkmarx</p>
-              </div>
-              <div className="bg-slate-900 border border-slate-800 rounded-lg p-4 text-center">
-                <p className="text-sm font-medium text-slate-300">Any SBOM/SARIF tool</p>
-              </div>
             </div>
           </div>
         </div>
