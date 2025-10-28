@@ -121,21 +121,6 @@ function DecisionFlowDiagram() {
       {/* Arrow from Probabilistic to Risk Scoring */}
       <path d="M 355 180 L 355 140" stroke="#8b5cf6" strokeWidth="2" markerEnd="url(#arrowhead3)" />
       
-      {/* MITRE ATT&CK (feeding into Decision Engine) */}
-      <rect x="510" y="180" width="150" height="60" fill="#1e293b" stroke="#f59e0b" strokeWidth="2" rx="8" />
-      <text x="585" y="205" fill="#f1f5f9" fontSize="13" fontWeight="bold" textAnchor="middle">
-        MITRE ATT&CK
-      </text>
-      <text x="585" y="220" fill="#94a3b8" fontSize="11" textAnchor="middle">
-        Technique mapping
-      </text>
-      <text x="585" y="233" fill="#94a3b8" fontSize="11" textAnchor="middle">
-        T1190, T1059, T1078
-      </text>
-      
-      {/* Arrow from MITRE to Decision Engine */}
-      <path d="M 585 180 L 585 140" stroke="#f59e0b" strokeWidth="2" markerEnd="url(#arrowhead4)" />
-      
       {/* Risk Scoring */}
       <rect x="280" y="80" width="150" height="60" fill="#1e293b" stroke="#3b82f6" strokeWidth="2" rx="8" />
       <text x="355" y="110" fill="#f1f5f9" fontSize="14" fontWeight="bold" textAnchor="middle">
@@ -169,8 +154,23 @@ function DecisionFlowDiagram() {
         ALLOW / FIX / BLOCK
       </text>
       
-      {/* Arrow down */}
+      {/* MITRE ATT&CK (output from Decision Engine) */}
+      <rect x="680" y="200" width="110" height="50" fill="#1e293b" stroke="#f59e0b" strokeWidth="2" rx="8" />
+      <text x="735" y="220" fill="#f1f5f9" fontSize="12" fontWeight="bold" textAnchor="middle">
+        MITRE ATT&CK
+      </text>
+      <text x="735" y="237" fill="#94a3b8" fontSize="10" textAnchor="middle">
+        T1190, T1059...
+      </text>
+      
+      {/* Arrow from Decision Engine to MITRE */}
+      <path d="M 660 110 L 735 110 L 735 200" stroke="#f59e0b" strokeWidth="2" markerEnd="url(#arrowhead4)" />
+      
+      {/* Arrow from Verdict down */}
       <path d="M 585 260 L 585 320" stroke="#14b8a6" strokeWidth="2" markerEnd="url(#arrowhead2)" />
+      
+      {/* Arrow from MITRE to Evidence */}
+      <path d="M 735 250 L 735 350 L 660 350" stroke="#f59e0b" strokeWidth="2" markerEnd="url(#arrowhead4)" />
       
       {/* Evidence Bundle */}
       <rect x="510" y="320" width="150" height="60" fill="#14b8a6" stroke="#0d9488" strokeWidth="2" rx="8" />
@@ -254,7 +254,7 @@ export function ProductAlDeci() {
               Request Access
             </Link>
             <a
-              href="/pdfs/aldeci-one-pager-v20251035.pdf"
+              href="/pdfs/aldeci-one-pager-v20251036.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"
@@ -854,8 +854,11 @@ export function ProductAlDeci() {
             </div>
             <div className="bg-slate-950 border border-slate-800 rounded-lg p-6">
               <h4 className="text-lg font-semibold text-slate-50 mb-3">Score Composition</h4>
+              <p className="text-slate-400 mb-3">
+                The composite risk score (0-100) combines EPSS percentile, KEV flag, version lag, exposure flags, Bayesian posterior (w_bayes=0.10), and Markov forecast (w_trend=0.05). The extended formula improves F1 score from 0.87 to 0.91 in validation tests.
+              </p>
               <p className="text-slate-400">
-                Bayesian posterior and Markov trend outputs feed into the composite risk score via calibrated weights (w_bayes=0.10, w_trend=0.05). The extended formula improves F1 score from 0.87 to 0.91 in validation tests. Detailed mathematical derivations and validation results are available in the <a href="/pdfs/risk-model-deep-dive-v20251035.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300 underline">Risk Model Deep Dive whitepaper</a>.
+                <strong>Note:</strong> MITRE ATT&CK technique mappings are identified during LLM decision reasoning and included in evidence bundles for threat-informed prioritization and audit transparency, but are not included in the default score weights. Detailed mathematical derivations and validation results are available in the <a href="/pdfs/risk-model-deep-dive-v20251036.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300 underline">Risk Model Deep Dive whitepaper</a>.
               </p>
             </div>
           </div>
@@ -878,10 +881,10 @@ export function ProductAlDeci() {
               <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
                 <h4 className="text-lg font-semibold text-slate-50 mb-3">Threat-Informed Prioritization</h4>
                 <p className="text-slate-400 mb-3">
-                  MITRE technique mappings feed into risk scoring by identifying vulnerabilities that enable high-impact attack paths. Vulnerabilities mapped to Initial Access or Credential Access tactics receive elevated priority scores due to their role in attack chains.
+                  MITRE technique mappings enable threat-informed prioritization by identifying vulnerabilities that enable high-impact attack paths. Vulnerabilities mapped to Initial Access or Credential Access tactics provide critical threat context for security teams to prioritize remediation based on real-world attack patterns.
                 </p>
                 <p className="text-sm text-slate-500">
-                  <strong>Integration:</strong> Technique mappings appear in LLM decision responses, evidence bundles, and compliance reports for threat-context documentation
+                  <strong>Integration:</strong> Technique mappings appear in LLM decision responses, evidence bundles, and compliance reports for threat-context documentation and audit transparency
                 </p>
               </div>
             </div>
@@ -968,7 +971,7 @@ export function ProductAlDeci() {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-slate-50">MITRE ATT&CK Mapping</h4>
-                  <p className="text-slate-400">Maps vulnerabilities to adversary tactics and techniques (T1190: Exploit Public-Facing Application, T1059: Command Injection, T1078: Valid Accounts, T1003: Credential Dumping) for threat-informed prioritization</p>
+                  <p className="text-slate-400">LLMs identify applicable adversary tactics and techniques (T1190: Exploit Public-Facing Application, T1059: Command Injection, T1078: Valid Accounts, T1003: Credential Dumping) during reasoning; included in evidence bundles and policy checks for threat-informed prioritization</p>
                 </div>
               </div>
             </div>
@@ -1400,7 +1403,7 @@ export function ProductAlDeci() {
           {/* Download CTA */}
           <div className="text-center mb-16">
             <a
-              href="/pdfs/enterprise-vm-competitive-one-pager-v20251035.pdf"
+              href="/pdfs/enterprise-vm-competitive-one-pager-v20251036.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-slate-50 rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700"
@@ -1477,7 +1480,7 @@ export function ProductAlDeci() {
               Request Access
             </Link>
             <a
-              href="/pdfs/aldeci-one-pager-v20251035.pdf"
+              href="/pdfs/aldeci-one-pager-v20251036.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-slate-50 rounded-lg font-semibold text-lg hover:bg-slate-700 transition-all border border-slate-700 flex items-center justify-center gap-2"
