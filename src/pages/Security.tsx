@@ -132,7 +132,7 @@ export function Security() {
                 <div>
                   <h4 className="font-semibold text-slate-50 mb-2">1. Contact Us Securely</h4>
                   <p className="text-slate-400">
-                    Email: <a href="mailto:security@devops.ai" className="text-teal-400 hover:text-teal-300">security@devops.ai</a><br />
+                    Email: <a href="mailto:security@devopsai.co" className="text-teal-400 hover:text-teal-300">security@devopsai.co</a><br />
                     PGP Key: Available upon request
                   </p>
                 </div>
@@ -203,7 +203,7 @@ export function Security() {
                 We publish security advisories for significant vulnerabilities affecting our platform. Subscribe to our security mailing list to receive notifications:
               </p>
               <p className="mt-4">
-                <a href="mailto:security-announce@devops.ai" className="text-teal-400 hover:text-teal-300">security-announce@devops.ai</a>
+                <a href="mailto:security-announce@devopsai.co" className="text-teal-400 hover:text-teal-300">security-announce@devopsai.co</a>
               </p>
             </section>
 
@@ -213,7 +213,7 @@ export function Security() {
                 For general security questions or concerns, contact us at:
               </p>
               <p className="mt-4">
-                <strong>Email:</strong> <a href="mailto:security@devops.ai" className="text-teal-400 hover:text-teal-300">security@devops.ai</a><br />
+                <strong>Email:</strong> <a href="mailto:security@devopsai.co" className="text-teal-400 hover:text-teal-300">security@devopsai.co</a><br />
                 <strong>Address:</strong> Sydney, Australia
               </p>
             </section>

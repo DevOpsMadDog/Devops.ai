@@ -1,9 +1,9 @@
 export const siteConfig = {
   siteName: 'DevOps.ai',
-  siteUrl: 'https://devops.ai',
-  contactEmail: 'contact@devops.ai',
+  siteUrl: 'https://devopsai.co',
+  contactEmail: 'info@devopsai.co',
   company: {
-    name: 'DevOps.ai',
+    name: 'DevOps.ai Pty Ltd',
     founder: 'Shivakumaar Umasudan',
     location: 'Sydney, Australia'
   },

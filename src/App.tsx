@@ -8,6 +8,10 @@ const ProductAlDeci = lazy(() => import('./pages/ProductAlDeci').then(module => 
 const DesignPartners = lazy(() => import('./pages/DesignPartners').then(module => ({ default: module.DesignPartners })));
 const Resources = lazy(() => import('./pages/Resources').then(module => ({ default: module.Resources })));
 const Blog = lazy(() => import('./pages/Blog').then(module => ({ default: module.Blog })));
+const EvidenceAsCode = lazy(() => import('./pages/blog/EvidenceAsCode'));
+const CtemCnapp = lazy(() => import('./pages/blog/CtemCnapp'));
+const EpssKev = lazy(() => import('./pages/blog/EpssKev'));
+const GoldenPaths = lazy(() => import('./pages/blog/GoldenPaths'));
 const Guides = lazy(() => import('./pages/Guides').then(module => ({ default: module.Guides })));
 const About = lazy(() => import('./pages/About').then(module => ({ default: module.About })));
 const Contact = lazy(() => import('./pages/Contact').then(module => ({ default: module.Contact })));
@@ -42,6 +46,10 @@ function App() {
               <Route path="/customers" element={<Navigate to="/partners/design" replace />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/evidence-as-code-in-practice" element={<EvidenceAsCode />} />
+              <Route path="/blog/ctem-cnapp-without-noise" element={<CtemCnapp />} />
+              <Route path="/blog/epss-kev-prioritization" element={<EpssKev />} />
+              <Route path="/blog/golden-paths-devsecops" element={<GoldenPaths />} />
               <Route path="/resources/guides" element={<Guides />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />

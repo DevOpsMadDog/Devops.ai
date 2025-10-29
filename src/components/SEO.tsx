@@ -10,7 +10,7 @@ interface SEOProps {
 }
 
 export function SEO({ title, description, canonical, ogImage, type = 'website', jsonLd }: SEOProps) {
-  const siteUrl = 'https://devops.ai';
+  const siteUrl = 'https://devopsai.co';
   const fullCanonical = canonical || window.location.href;
   const fullOgImage = ogImage ? `${siteUrl}${ogImage}` : `${siteUrl}/images/og-default.png`;
 

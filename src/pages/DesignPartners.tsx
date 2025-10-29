@@ -191,7 +191,7 @@ export function DesignPartners() {
           <h2 className="text-4xl font-bold text-slate-50 mb-12 text-center">Apply to Join</h2>
 
           <form 
-            action="https://formsubmit.co/contact@devops.ai" 
+            action="https://formsubmit.co/info@devopsai.co" 
             method="POST"
             className="bg-slate-950 border border-slate-800 rounded-xl p-8 space-y-6"
           >
@@ -199,8 +199,9 @@ export function DesignPartners() {
             <input type="hidden" name="_subject" value="DevOps.ai Design Partner Application" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="/thank-you" />
+            <input type="hidden" name="_next" value="https://devopsai.co/thank-you" />
             <input type="hidden" name="form_type" value="design_partner" />
+            <input type="text" name="_honey" style={{display: 'none'}} />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>

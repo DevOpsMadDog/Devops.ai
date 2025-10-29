@@ -162,7 +162,7 @@ export function Terms() {
                 For questions about these Terms, contact us at:
               </p>
               <p className="mt-4">
-                <strong>Email:</strong> <a href="mailto:legal@devops.ai" className="text-teal-400 hover:text-teal-300">legal@devops.ai</a><br />
+                <strong>Email:</strong> <a href="mailto:legal@devopsai.co" className="text-teal-400 hover:text-teal-300">legal@devopsai.co</a><br />
                 <strong>Address:</strong> Sydney, Australia
               </p>
             </section>

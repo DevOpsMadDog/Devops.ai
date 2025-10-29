@@ -6,6 +6,7 @@ export function Blog() {
   const blogPosts = [
     {
       id: 1,
+      slug: '/blog/evidence-as-code-in-practice',
       title: 'Evidence-as-Code in Practice: Building Audit-Ready CI/CD Pipelines',
       excerpt: 'Learn how to implement cryptographically signed evidence bundles in your CI/CD pipelines for automated compliance and audit readiness. We explore the architecture, implementation patterns, and real-world examples from enterprises using AlDeci.',
       author: 'Shivakumaar Umasudan',
@@ -15,6 +16,7 @@ export function Blog() {
     },
     {
       id: 2,
+      slug: '/blog/ctem-cnapp-without-noise',
       title: 'CTEM + CNAPP Without the Noise: Context-Aware Risk Prioritization',
       excerpt: 'Continuous Threat Exposure Management (CTEM) and Cloud-Native Application Protection Platforms (CNAPP) generate thousands of findings. Discover how combining EPSS, KEV, business context, and SBOM correlation cuts through the noise to focus on what matters.',
       author: 'Shivakumaar Umasudan',
@@ -24,6 +26,7 @@ export function Blog() {
     },
     {
       id: 3,
+      slug: '/blog/epss-kev-prioritization',
       title: 'How EPSS and KEV Improve Vulnerability Prioritization: A Data-Driven Approach',
       excerpt: 'CVSS scores alone don\'t tell you which vulnerabilities to fix first. Learn how EPSS (Exploit Prediction Scoring System) and CISA KEV (Known Exploited Vulnerabilities) provide exploit intelligence that dramatically improves remediation prioritization.',
       author: 'Shivakumaar Umasudan',
@@ -33,6 +36,7 @@ export function Blog() {
     },
     {
       id: 4,
+      slug: '/blog/golden-paths-devsecops',
       title: 'Designing Golden Paths for DevSecOps: Platform Engineering Meets Security',
       excerpt: 'Golden paths make secure defaults easy and insecure shortcuts hard. Explore how platform engineering teams are building self-service DevSecOps workflows with automated security gates, evidence generation, and compliance mapping built in.',
       author: 'Shivakumaar Umasudan',
@@ -92,7 +96,7 @@ export function Blog() {
                 </div>
                 <span>{blogPosts[0].readTime}</span>
               </div>
-              <Link to="/blog" className="inline-flex items-center gap-2 px-6 py-3 bg-teal-500 text-slate-950 rounded-lg font-semibold hover:bg-teal-400 transition-all">
+              <Link to={blogPosts[0].slug} className="inline-flex items-center gap-2 px-6 py-3 bg-teal-500 text-slate-950 rounded-lg font-semibold hover:bg-teal-400 transition-all">
                 Read Article <ArrowRight size={20} />
               </Link>
             </div>
@@ -129,7 +133,7 @@ export function Blog() {
                     </div>
                     <span>{post.readTime}</span>
                   </div>
-                  <Link to="/blog" className="text-teal-400 font-semibold hover:text-teal-300 transition-colors flex items-center gap-2">
+                  <Link to={post.slug} className="text-teal-400 font-semibold hover:text-teal-300 transition-colors flex items-center gap-2">
                     Read More <ArrowRight size={18} />
                   </Link>
                 </div>

@@ -80,7 +80,7 @@ export function Contact() {
           {/* Contact Form */}
           <div className="max-w-3xl mx-auto">
             <form 
-              action="https://formsubmit.co/contact@devops.ai" 
+              action="https://formsubmit.co/info@devopsai.co" 
               method="POST"
               className="bg-slate-900 border border-slate-800 rounded-xl p-8 space-y-6"
             >
@@ -88,8 +88,9 @@ export function Contact() {
               <input type="hidden" name="_subject" value={`DevOps.ai ${activeForm === 'demo' ? 'Demo Request' : activeForm === 'access' ? 'Access Request' : 'General Inquiry'}`} />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="/thank-you" />
+              <input type="hidden" name="_next" value="https://devopsai.co/thank-you" />
               <input type="hidden" name="form_type" value={activeForm} />
+              <input type="text" name="_honey" style={{display: 'none'}} />
               
               <div>
                 <h2 className="text-2xl font-bold text-slate-50 mb-2">
@@ -231,8 +232,8 @@ export function Contact() {
                 <Mail className="text-teal-400" size={24} />
                 <h3 className="text-xl font-semibold text-slate-50">Email</h3>
               </div>
-              <a href="mailto:contact@devops.ai" className="text-teal-400 hover:text-teal-300 text-lg transition-colors">
-                contact@devops.ai
+              <a href="mailto:info@devopsai.co" className="text-teal-400 hover:text-teal-300 text-lg transition-colors">
+                info@devopsai.co
               </a>
               <p className="text-slate-400 mt-4">
                 We typically respond within 1 business day

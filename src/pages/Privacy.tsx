@@ -130,7 +130,7 @@ export function Privacy() {
                 For privacy-related questions or to exercise your rights, contact us at:
               </p>
               <p className="mt-4">
-                <strong>Email:</strong> <a href="mailto:privacy@devops.ai" className="text-teal-400 hover:text-teal-300">privacy@devops.ai</a><br />
+                <strong>Email:</strong> <a href="mailto:privacy@devopsai.co" className="text-teal-400 hover:text-teal-300">privacy@devopsai.co</a><br />
                 <strong>Address:</strong> Sydney, Australia
               </p>
             </section>
